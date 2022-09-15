@@ -25,7 +25,7 @@ $test = "200";
                     Column
                 </div>
                 <div class="col">
-                    Column
+                    Row
                 </div>
             </div>
         </div>
