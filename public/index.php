@@ -12,22 +12,17 @@ $test = "200";
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <script src="js/bootstrap.bundle.js" defer></script>
-        <title>test</title>
+        <title>KW1C Reserveringssysteem</title>
     </head>
     <body>
-        <p>lorem ipsum dolor sit amet</p>
-        <div class="container text-center">
-            <div class="row">
-                <div class="col">
-                    Column
-                </div>
-                <div class="col">
-                    Column
-                </div>
-                <div class="col">
-                    Row
-                </div>
-            </div>
-        </div>
+        <header>
+            <?php include "./includes/header.php"?>
+        </header>
+        <main>
+
+        </main>
+        <footer>
+
+        </footer>
     </body>
 </html>
