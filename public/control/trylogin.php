@@ -13,11 +13,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_num_rows($result) === 1)
     {
         // Query current hashed password
+        $QueryCheckPassword = "SELECT * FROM account WHERE UserName = '$usernameInput'";
 
         $result = mysqli_query($con, $QueryCheckPassword);
 
+        $userData = mysqli_fetch_row($result);
 
+        if (password_verify($passwordInput, $userData[2]))
         {
+            $_SESSION["Username"] = $userData[1];
+            $_SESSION["Level"] = $userData[3];
+            header("Location: ../index.php");
         }
         else
         {
