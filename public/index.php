@@ -16,5 +16,16 @@
                     </tr>
                 </tbody>
             </table>
+            <a href="login.php">Log in</a><br>
+            <a href="logout.php">Log uit</a><br>
+
+            <?php
+
+            if (isset($_SESSION["Username"]))
+            {
+                echo "Welcome " . $_SESSION["Username"] . "!";
+            }
+
+            ?>
         </main>
 <?php include "./includes/footer.php"?>

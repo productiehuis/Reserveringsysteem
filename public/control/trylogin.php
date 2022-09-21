@@ -13,15 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_num_rows($result) === 1)
     {
         // Query current hashed password
-        $QueryCheckPassword = "SELECT userHashedPassword FROM account WHERE UserName = '$usernameInput'";
 
         $result = mysqli_query($con, $QueryCheckPassword);
 
-        $hashedPassword = mysqli_fetch_row($result);
 
-        if (password_verify($passwordInput, $hashedPassword[0]))
         {
-            echo "LOG IN SUCCESS";
         }
         else
         {

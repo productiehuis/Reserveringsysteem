@@ -42,4 +42,4 @@ $color = "#0E85C7";
               </div>
             </nav>
         </header>
-        <!-- Zie footer.php
+        <!-- Zie footer.php -->
