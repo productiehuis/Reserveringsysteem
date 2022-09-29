@@ -1,15 +1,33 @@
 <?php
-include "../includes/database.php";
+require_once "insertQuery.php";
+$insert = new insertQuery;
+require_once "selectQuery.php";
+$select = new selectQuery;
 
-$stmt = $con->prepare("INSERT INTO account(`userName`, `userHashedPassword`, `userLevel`) VALUES(?, ?, ?)");
+/*
+----------------ADDING USERS
 
-$stmt->bind_param("ssi", $username, $hashedpassword, $userlevel);
 
-$username = "admin";
-$password = "password";
-$hashedpassword = password_hash($password, PASSWORD_BCRYPT );
+$username = "test";
+$password = "test";
 $userlevel = 1;
 
-//$stmt->execute();
+$array = [$username, $password, $userlevel];
 
-$stmt->close();
+echo $new->insertAccount($array);*/
+
+
+
+
+/*
+----------------ADDING VOORSTELLINGEN
+$voorstellingnaam = "Sneeuwwitje";
+$tijd = "00:10:00";
+$datum = "2022-11-16";
+$locatie = "Nijmegen";
+$max = 1200;
+
+$asdasd = [$voorstellingnaam, $tijd, $datum, $locatie, $max];
+
+$new->insertVoorstelling($asdasd);*/
+

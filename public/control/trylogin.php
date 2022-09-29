@@ -1,7 +1,14 @@
 <?php
-include "../includes/database.php";
+class trylogin extends query
+{
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+}
+?>
+
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+{
     $usernameInput = $con->real_escape_string(trim(strip_tags($_POST['username'])));
     $passwordInput = $con->real_escape_string(trim(strip_tags($_POST['password'])));
 
@@ -21,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (password_verify($passwordInput, $userData[2]))
         {
+            session_start();
             $_SESSION["Username"] = $userData[1];
             $_SESSION["Level"] = $userData[3];
             header("Location: ../index.php");
