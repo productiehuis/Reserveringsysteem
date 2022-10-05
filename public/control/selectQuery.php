@@ -17,7 +17,18 @@ class selectQuery extends connection
         $stmt = $this->con->prepare("SELECT * FROM bezoeker WHERE BezoekerEmail = ?");
         $stmt->bind_param("s", $cleanEmail);
         $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc();
+    }
 
-        return $stmt->fetch();
+    public function selectAccount(string $username)
+    {
+        $cleanUsername = $this->sanatize($username);
+
+        $stmt = $this->con->prepare("SELECT * FROM Account WHERE userName = ?");
+        $stmt->bind_param("s", $cleanUsername);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc();
     }
 }

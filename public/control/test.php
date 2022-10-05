@@ -4,9 +4,8 @@ $insert = new insertQuery;
 require_once "selectQuery.php";
 $select = new selectQuery;
 
-/*
-----------------ADDING USERS
 
+//ADDING USERS
 
 $username = "test";
 $password = "test";
@@ -14,13 +13,11 @@ $userlevel = 1;
 
 $array = [$username, $password, $userlevel];
 
-echo $new->insertAccount($array);*/
-
-
+echo $insert->insertAccount($array);
 
 
 /*
-----------------ADDING VOORSTELLINGEN
+//ADDING VOORSTELLINGEN
 $voorstellingnaam = "Sneeuwwitje";
 $tijd = "00:10:00";
 $datum = "2022-11-16";
@@ -29,5 +26,20 @@ $max = 1200;
 
 $asdasd = [$voorstellingnaam, $tijd, $datum, $locatie, $max];
 
-$new->insertVoorstelling($asdasd);*/
+$insert->insertVoorstelling($asdasd);
+*/
 
+/*
+//SELECT BEZOEKER
+
+var_dump($select->selectBezoeker("admin@kw1c.com"));
+*/
+
+/*
+//INSERT BEZOEKER
+$asdasd = ["ian", "ianli@outlook.com"];
+$asdasa = ["ian", "admin@kw1c.com"];
+
+echo $insert->insertBezoeker($asdasd);
+echo $insert->insertBezoeker($asdasa);
+*/

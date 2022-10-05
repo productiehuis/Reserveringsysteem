@@ -1,32 +1,31 @@
 <?php
-class trylogin extends query
-{
-
-}
-?>
-
-<?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
-    $usernameInput = $con->real_escape_string(trim(strip_tags($_POST['username'])));
-    $passwordInput = $con->real_escape_string(trim(strip_tags($_POST['password'])));
+    require_once "selectQuery.php";
+    $select = new selectQuery;
 
-    $QueryCheckName = "SELECT * FROM account WHERE UserName = '$usernameInput'";
+    $usernameInput = $_POST['username'];
+    $passwordInput = $_POST['password'];
 
+    $result = $select->selectAccount($usernameInput);
 
-    $result = mysqli_query($con, $QueryCheckName);
-
-    if (mysqli_num_rows($result) === 1)
+    if (!empty($result))
     {
-        // Query current hashed password
-        $QueryCheckPassword = "SELECT * FROM account WHERE UserName = '$usernameInput'";
+        if (password_verify($result[2], $passwordInput))
+        {
+            echo "VERIFIED";
+        }
+        else
+        {
+            echo "WRONG PASSWORD OR NAME";
+        }
+    }
 
-        $result = mysqli_query($con, $QueryCheckPassword);
 
-        $userData = mysqli_fetch_row($result);
+    var_dump($result);
 
-        if (password_verify($passwordInput, $userData[2]))
+        /*if (password_verify($passwordInput, $userData[2]))
         {
             session_start();
             $_SESSION["Username"] = $userData[1];
@@ -36,12 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         else
         {
             echo "WACHTWOORD FOUT";
-        }
-    }
-    else
-    {
-        echo "USERNAME BESTAAT NIET";
-    }
+        }*/
 
 }
 else
