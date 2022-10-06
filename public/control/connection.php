@@ -15,7 +15,7 @@ class connection
         }
     }
 
-    public function conn()
+    protected function conn()
     {
         try
         {

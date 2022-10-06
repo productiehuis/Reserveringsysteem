@@ -7,13 +7,15 @@ $select = new selectQuery;
 
 //ADDING USERS
 
-$username = "test";
-$password = "test";
+$username = "admin";
+$password = "password";
 $userlevel = 1;
 
 $array = [$username, $password, $userlevel];
 
 echo $insert->insertAccount($array);
+
+
 
 
 /*
