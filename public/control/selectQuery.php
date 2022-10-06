@@ -31,4 +31,14 @@ class selectQuery extends connection
         $result = $stmt->get_result();
         return $result->fetch_assoc();
     }
+
+    public function selectVoorstelling(int $id)
+    {
+        $cleanId = $this->sanatize($id);
+        $stmt = $this->con->prepare("SELECT * FROM Voorstellingen WHERE VoorstellingNummer = ?");
+        $stmt->bind_param("i", $cleanId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc();
+    }
 }
