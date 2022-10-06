@@ -1,0 +1,15 @@
+.kw1c-blue {
+    background-color: rgb(14, 133, 199)!important;
+}
+#Image_3 {
+    display: block;
+    width: auto;
+    height: auto;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+a:hover {
+    color: grey;
+}
