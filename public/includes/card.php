@@ -1,6 +1,6 @@
 <?php
     $currentTime = date("H:i");
-    $currentDate = date("y-m-d")
+    $currentDate = date("d-m-y")
 ?>
 <div class="card mt-2 col-sm-3 container-sm">
     <img src="./img/placeholder.png" class="rounded mt-2 card-img-top" alt="...">
