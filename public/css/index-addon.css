@@ -15,7 +15,7 @@ a:hover {
 }
 .card {
     display: flex;
-	margin: -1px !important;
+    margin: -1px !important;
 }
 
 .dropdown-content
