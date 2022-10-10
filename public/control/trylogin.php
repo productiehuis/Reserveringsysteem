@@ -1,7 +1,6 @@
 <?php
 
-if ($_SERVER["REQUEST_METHOD"] == "POST")
-{
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require_once "selectQuery.php";
     $select = new selectQuery;
 
@@ -12,33 +11,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
     if (!empty($result))
     {
-        if (password_verify($result[2], $passwordInput))
+        if (password_verify($passwordInput, $result["userHashedPassword"]))
         {
-            echo "VERIFIED";
+            $_SESSION["Username"] = $result["userName"];
+            $_SESSION["Level"] = $result["userLevel"];
+            header("Location: ../index.php");
+            exit();
         }
         else
         {
-            echo "WRONG PASSWORD OR NAME";
+            header("Location: ../login.php?s=0");
         }
     }
-
-
-    var_dump($result);
-
-        /*if (password_verify($passwordInput, $userData[2]))
-        {
-            session_start();
-            $_SESSION["Username"] = $userData[1];
-            $_SESSION["Level"] = $userData[3];
-            header("Location: ../index.php");
-        }
-        else
-        {
-            echo "WACHTWOORD FOUT";
-        }*/
-
+    else
+    {
+        header("Location: ../login.php?s=0");
+    }
 }
 else
 {
-    echo "404";
+    header("Location: ../login.php?s=0");
 }
