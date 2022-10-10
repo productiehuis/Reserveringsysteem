@@ -1,6 +1,7 @@
 <?php
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+{
     require_once "../control/class/selectQuery.php";
     $select = new selectQuery;
 
@@ -8,6 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $passwordInput = $_POST['password'];
 
     $result = $select->selectAccount($usernameInput);
+
+    $select = null;
 
     if (!empty($result))
     {

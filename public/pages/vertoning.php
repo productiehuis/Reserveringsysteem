@@ -8,7 +8,7 @@
                 Vertoningen titel:
             </td>
             <td>
-                <input type="text" name="title">
+                <input type="text" name="title" required>
             </td>
         </tr>
         <tr>
@@ -16,7 +16,7 @@
                 Locatie:
             </td>
             <td>
-                <input type="text" name="location">
+                <input type="text" name="location" required>
             </td>
         </tr>
         <tr>
@@ -24,7 +24,7 @@
                 Tijd:
             </td>
             <td>
-                <input type="time" name="time">
+                <input type="time" name="time" required>
             </td>
         </tr>
         <tr>
@@ -32,7 +32,7 @@
                 Datum:
             </td>
             <td>
-                <input type="date">
+                <input type="date" name="date" required>
             </td>
         </tr>
         <tr>
@@ -40,7 +40,7 @@
                 Maximum aantal zitplaatsen:
             </td>
             <td>
-                <input type="text">
+                <input type="number" name="max" required>
             </td>
         </tr>
         <tr>
@@ -48,6 +48,17 @@
                 <input class="btn-primary btn" type="submit" value="Toevoegen">
             </td>
         </tr>
+        <?php
 
+        if ($_GET["s"] == 0)
+        {
+            echo "<tr><td><p class='error'>Er is iets fout gegaan.</p></td></tr>";
+        }
+        else if($_GET["s"] == 1)
+        {
+            echo "<tr><td><p class='succes'>Vertoning succesvol toegevoegd.</p></td></tr>";
+        }
+
+        ?>
     </table>
 </form>

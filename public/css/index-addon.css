@@ -15,13 +15,7 @@ a:hover {
 }
 .card {
     display: flex;
-<<<<<<< Updated upstream
-    margin: 20px;
-}
-
-main a
-{
-
+	margin: -1px !important;
 }
 
 .dropdown-content
@@ -52,7 +46,13 @@ main a
 {
     display: block;
 }
-=======
-    margin: -1px !important;
+
+.succes
+{
+    color: limegreen;
 }
->>>>>>> Stashed changes
+
+.error
+{
+    color: red;
+}
