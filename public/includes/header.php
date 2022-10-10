@@ -1,6 +1,7 @@
 <?php
 ## KW1C Blauw Hexcode
 $color = "#0E85C7";
+session_start();
 ?>
 <!doctype html>
     <html lang="en">

@@ -2,6 +2,7 @@
 if (isset($_SESSION["Username"]))
 {
     unset($_SESSION["Username"]);
+    unset($_SESSION["Level"]);
 }
 
 $_SESSION = array();
