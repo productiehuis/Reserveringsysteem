@@ -13,8 +13,9 @@ a {
 a:hover {
     color: grey;
 }
-card {
+.card {
     display: flex;
+<<<<<<< Updated upstream
     margin: 20px;
 }
 
@@ -51,3 +52,7 @@ main a
 {
     display: block;
 }
+=======
+    margin: -1px !important;
+}
+>>>>>>> Stashed changes

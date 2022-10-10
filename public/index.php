@@ -12,7 +12,7 @@
             }
             ?>
         </main>
-        <div class="container m-0">
+        <div class="container">
             <div class="row">
                 <?php include "./includes/card.php"?>
                 <?php include "./includes/card.php"?>

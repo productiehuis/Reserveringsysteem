@@ -5,7 +5,7 @@ class connection
     private string $host = "localhost";
     private string $username = "root";
     private string $password = "";
-    private string $dbname = "theaterreserveringen";
+    private string $dbname = "theaterreservering";
 
     public function __construct()
     {
