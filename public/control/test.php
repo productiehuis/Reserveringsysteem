@@ -1,7 +1,7 @@
 <?php
-require_once "insertQuery.php";
+require_once "class/insertQuery.php";
 $insert = new insertQuery;
-require_once "selectQuery.php";
+require_once "class/selectQuery.php";
 $select = new selectQuery;
 
 

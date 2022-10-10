@@ -1,7 +1,7 @@
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    require_once "../control/selectQuery.php";
+    require_once "../control/class/selectQuery.php";
     $select = new selectQuery;
 
     $usernameInput = $_POST['username'];
@@ -20,18 +20,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         else
         {
-            header("Location: login.php?s=0");
+            header("Location: ../pages/login.php?s=0");
             exit("Login error");
         }
     }
     else
     {
-        header("Location: login.php?s=0");
+        header("Location: ../pages/login.php?s=0");
         exit("Login error");
     }
 }
 else
 {
-    header("Location: login.php?s=0");
+    header("Location: ../pages/login.php?s=0");
     exit("Login error");
 }

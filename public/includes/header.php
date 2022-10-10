@@ -38,9 +38,6 @@ $color = "#0E85C7";
                     <li class="nav-item">
                       <a class="nav-link active m-3" aria-current="page" href="/reserveringsysteem/public/index.php">Agenda</a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link active m-3" aria-current="page" href="#">Archief</a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link active m-3">Test</a>
                         <ul class="dropdown-menu">
@@ -50,22 +47,40 @@ $color = "#0E85C7";
                             <li role="separator" class="divider"></li>
                             <li><a href="#">sit amet</a></li>
                         </ul>
+
                     </li>
                   </ul>
-                    <button class="btn btn-danger rounded text-center" type="button">
-                        <a href="/reserveringsysteem/public/pages/login.php">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-columns" viewBox="0 0 16 16">
-                                <path d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V2zm8.5 0v8H15V2H8.5zm0 9v3H15v-3H8.5zm-1-9H1v3h6.5V2zM1 14h6.5V6H1v8z"/>
-                            </svg> Login
-                        </a>
-                    </button>
-                    <button class="m-3 btn btn-danger rounded text-center" type="button">
-                        <a href="/reserveringsysteem/public/pages/logout.php">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-columns" viewBox="0 0 16 16">
-                                <path d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V2zm8.5 0v8H15V2H8.5zm0 9v3H15v-3H8.5zm-1-9H1v3h6.5V2zM1 14h6.5V6H1v8z"/>
-                            </svg> Logout
-                        </a>
-                    </button>
+                    <?php
+                    if (isset($_SESSION["Username"]))
+                    {
+                        echo "
+                        <div class='menu'>
+                            <li class='dropdown'>
+                            <a href='javascript:void(0)' class='dropbtn'>Welkom "  . $_SESSION["Username"] . "</a>
+                                <div class='dropdown-content'>
+                                    <a href='/reserveringsysteem/public/pages/vertoning.php'>Vertoningen</a>
+                                    <a href=\"/reserveringsysteem/public/pages/archief.php\">Archief</a>
+                                    <a href=\"/reserveringsysteem/public/control/logout.php\">Log uit</a>
+                                </div>
+                            </li>
+                        </div>
+                        ";
+                    }
+                    else
+                    {
+                        echo "
+                        <button class=\"btn btn-danger rounded text-center\" type=\"button\">
+                            <a href=\"/reserveringsysteem/public/pages/login.php\">
+                                <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-columns\" viewBox=\"0 0 16 16\">
+                                    <path d=\"M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V2zm8.5 0v8H15V2H8.5zm0 9v3H15v-3H8.5zm-1-9H1v3h6.5V2zM1 14h6.5V6H1v8z\"/>
+                                </svg> Login
+                            </a>
+                        </button>
+                        ";
+                    }
+
+                    ?>
+
                 </div>
               </div>
             </nav>
