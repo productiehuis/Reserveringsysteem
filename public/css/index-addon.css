@@ -13,3 +13,7 @@ a {
 a:hover {
     color: grey;
 }
+card {
+    display: flex;
+    margin: 20px;
+}

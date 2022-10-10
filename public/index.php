@@ -12,5 +12,16 @@
             }
             ?>
         </main>
-        <?php include "./includes/card.php"?>
+        <div class="container m-0">
+            <div class="row">
+                <?php include "./includes/card.php"?>
+                <?php include "./includes/card.php"?>
+                <?php include "./includes/card.php"?>
+                <?php include "./includes/card.php"?>
+                <?php include "./includes/card.php"?>
+                <?php include "./includes/card.php"?>
+                <?php include "./includes/card.php"?>
+                <?php include "./includes/card.php"?>
+            </div>
+        </div>
 <?php include "./includes/footer.php"?>
