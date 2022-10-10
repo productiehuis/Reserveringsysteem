@@ -1,6 +1,6 @@
 <?php include "../includes/header.php"; ?>
 <main class="text-center mt-5">
-    <form method="post" action="../control/trylogin.php">
+    <form method="post" action="/reserveringsysteem/public/control/trylogin.php">
         <label>
             <input name="username" type="text" placeholder="Gebruikersnaam">
         </label>
