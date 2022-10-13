@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         {
             $_SESSION["Username"] = $result["userName"];
             $_SESSION["Level"] = $result["userLevel"];
-            header("Location: ../index.php");
+            header("Location: ../pages/overzicht.php");
             exit("Login succes");
         }
         else

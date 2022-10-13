@@ -2,7 +2,6 @@
     $currentTime = date("H:i");
     $currentDate = date("d-m-y")
 ?>
-<!-- m-2 col md-5 col-sm-3 container-sm -->
 <div class="card col-3">
     <img src="/reserveringsysteem/public/img/placeholder.png" class="rounded mt-2 card-img-top" alt="...">
     <div class="card-body">
