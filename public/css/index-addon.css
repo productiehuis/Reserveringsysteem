@@ -8,10 +8,9 @@
 }
 a {
     text-decoration: none;
-    color: white;
 }
-a:hover {
-    color: grey;
+.hover:hover {
+    color: ghostwhite;
 }
 .card {
     display: flex;
@@ -55,4 +54,7 @@ a:hover {
 .error
 {
     color: red;
+}
+.hover-button:hover {
+    background-color: slategrey;
 }
