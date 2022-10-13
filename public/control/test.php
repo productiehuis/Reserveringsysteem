@@ -1,47 +1,103 @@
 <?php
-require_once "class/insertQuery.php";
-$insert = new insertQuery;
-require_once "class/selectQuery.php";
-$select = new selectQuery;
+include "../includes/header.php";
+ini_set('display_errors', 1);
+ini_set('error_reporting', 1);
+ini_set('log_errors', 1);
 
 
-//ADDING USERS
+require_once "class/accountDL.php";
+require_once "class/performanceDL.php";
+require_once "class/visitorDL.php";
+$account = new accountDL();
+$performance = new performanceDL();
+$visitor = new visitorDL();
 
-$username = "admin";
-$password = "password";
-$userlevel = 1;
-
-$array = [$username, $password, $userlevel];
-
-echo $insert->insertAccount($array);
 
 
 
 
 /*
-//ADDING VOORSTELLINGEN
-$voorstellingnaam = "Sneeuwwitje";
-$tijd = "00:10:00";
-$datum = "2022-11-16";
-$locatie = "Nijmegen";
-$max = 1200;
+//CREATE ACCOUNT
 
-$asdasd = [$voorstellingnaam, $tijd, $datum, $locatie, $max];
+$accountobj = new account();
 
-$insert->insertVoorstelling($asdasd);
+$accountobj->userName = "admin";
+$accountobj->userPassword = "password";
+$accountobj->userLevel = 1;
+
+echo $account->createAccount($accountobj);
 */
+
 
 /*
-//SELECT BEZOEKER
+//READ ACCOUNT
 
-var_dump($select->selectBezoeker("admin@kw1c.com"));
+var_dump($account->readAccount("admin"));
 */
+
+
+
+
+
+
+
+
 
 /*
-//INSERT BEZOEKER
-$asdasd = ["ian", "ianli@outlook.com"];
-$asdasa = ["ian", "admin@kw1c.com"];
+//CREATE PERFORMANCE
 
-echo $insert->insertBezoeker($asdasd);
-echo $insert->insertBezoeker($asdasa);
+$performanceobj = new performance();
+
+$performanceobj->name = "Sneeuwwitje";
+$performanceobj->description = "Mooie voorstelling";
+$performanceobj->starttime = "00:10:00";
+$performanceobj->date = "2022-11-16";
+$performanceobj->location = "Nijmegen";
+$performanceobj->max = 1200;
+
+var_dump($performance->createPerformance($performanceobj));
 */
+
+
+/*
+//READ PERFORMANCE
+
+var_dump($performance->readPerformance("1"));
+*/
+
+
+/*
+//READ ALL PERFORMANCE
+
+var_dump($performance->readAllPerformance());
+*/
+
+
+
+
+
+
+
+
+
+
+/*
+//READ VISITOR
+
+var_dump($visitor->readVisitor("admin@kw1c.com"));
+*/
+
+
+/*
+//CREATE VISITOR
+$visitorobj = new visitor();
+
+$visitorobj->visitorName = "Ian";
+$visitorobj->visitorEmail = "ianli123123@outlook.com";
+
+var_dump($visitor->createVisitor($visitorobj));
+*/
+
+
+
+

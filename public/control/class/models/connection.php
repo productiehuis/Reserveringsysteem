@@ -24,14 +24,13 @@ class connection
         }
         catch (mysqli_sql_exception $exception)
         {
-            $con = "Connection failed contact an administrator with the following error. " . $exception->getMessage();
+            $con = "Database connection failed contact an administrator with the following error. " . $exception->getMessage();
             return $con;
         }
     }
 
-    public function sanatize($input)
+    public function sanitize($input)
     {
-        $clean = mysqli_real_escape_string($this->conn(), strip_tags($input));
-        return $clean;
+        return mysqli_real_escape_string($this->conn(), strip_tags($input));
     }
 }

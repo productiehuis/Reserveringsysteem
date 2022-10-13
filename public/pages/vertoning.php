@@ -1,7 +1,7 @@
 <?php include "../includes/header.php"; ?>
 <a href="/reserveringsysteem/public/index.php">Home</a> > <a href="#">Vertoningen toevoegen</a>
 <h1>Vertoningen toevoegen</h1>
-<form method="POST" action="/reserveringsysteem/public/control/addVertoning.php">
+<form method="POST" action="/reserveringsysteem/public/control/addPerformance.php">
     <table>
         <tr>
             <td>
@@ -17,6 +17,14 @@
             </td>
             <td>
                 <input type="text" name="location" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Description:
+            </td>
+            <td>
+                <textarea name="description" required></textarea>
             </td>
         </tr>
         <tr>
@@ -50,11 +58,11 @@
         </tr>
         <?php
 
-        if ($_GET["s"] == 0)
+        if (isset($_GET["s"]) && $_GET["s"] == 0)
         {
             echo "<tr><td><p class='error'>Er is iets fout gegaan.</p></td></tr>";
         }
-        else if($_GET["s"] == 1)
+        else if(isset($_GET["s"]) &&$_GET["s"] == 1)
         {
             echo "<tr><td><p class='succes'>Vertoning succesvol toegevoegd.</p></td></tr>";
         }

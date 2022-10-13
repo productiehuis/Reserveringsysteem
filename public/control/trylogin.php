@@ -1,23 +1,22 @@
 <?php
-
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
-    require_once "../control/class/selectQuery.php";
-    $select = new selectQuery;
+    require_once "class/accountDL.php";
 
-    $usernameInput = $_POST['username'];
-    $passwordInput = $_POST['password'];
+    $account = new accountDL();
+    $accountobj = new account();
 
-    $result = $select->selectAccount($usernameInput);
+    $accountobj->userName = $_POST['username'];
+    $accountobj->userPassword = $_POST['password'];
 
-    $select = null;
+    $result = $account->readAccount($accountobj->userName);
 
     if (!empty($result))
     {
-        if (password_verify($passwordInput, $result["userHashedPassword"]))
+        if (password_verify($accountobj->userPassword, $result->userPassword))
         {
-            $_SESSION["Username"] = $result["userName"];
-            $_SESSION["Level"] = $result["userLevel"];
+            $_SESSION["Username"] = $result->userName;
+            $_SESSION["Level"] = $result->userLevel;
             header("Location: ../index.php");
             exit("Login succes");
         }

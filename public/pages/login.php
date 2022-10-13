@@ -42,19 +42,6 @@ if (isset($_SESSION["Username"]))
                     <li class="nav-item">
                         <a class="nav-link active m-3" aria-current="page" href="/reserveringsysteem/public/index.php">Agenda</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active m-3" aria-current="page" href="#">Archief</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link active m-3">Test</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Lorem</a></li>
-                            <li><a href="#">ipsum</a></li>
-                            <li><a href="#">dolor</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">sit amet</a></li>
-                        </ul>
-                    </li>
                 </ul>
             </div>
         </div>
