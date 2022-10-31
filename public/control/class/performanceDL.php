@@ -58,7 +58,7 @@ class performanceDL extends connection
 
     public function readAllPerformance()
     {
-        $stmt = $this->con->prepare("SELECT * FROM performance WHERE past = 0");
+        $stmt = $this->con->prepare("SELECT * FROM performance");
         $stmt->execute();
         $result = $stmt->get_result();
 
