@@ -2,7 +2,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
     require_once "class/performanceDL.php";
-    $performance = new performanceDL();
+    $performanceDL = new performanceDL();
     $performanceobj = new performance();
 
     $performanceobj->name = $_POST["title"];
@@ -12,8 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $performanceobj->date = $_POST["date"];
     $performanceobj->max = $_POST["max"];
 
-    $result = $performance->createPerformance($performanceobj);
-
+    $result = $performanceDL->createPerformance($performanceobj);
 
     if ($result === "")
     {

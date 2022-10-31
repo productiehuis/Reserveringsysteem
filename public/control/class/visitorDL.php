@@ -16,16 +16,26 @@ class visitorDL extends connection
         $cleanVisitorName = $this->sanitize($data->visitorName);
         $cleanVisitorEmail = $this->sanitize($data->visitorEmail);
 
-        if (empty($this->readVisitor($cleanVisitorEmail)))
+        $result = $this->readVisitor($cleanVisitorEmail);
+
+        if ($result == "Doesnt exist")
         {
             $stmt = $this->con->prepare("INSERT INTO visitor(visitorName, visitorEmail) VALUES(?, ?)");
             $stmt->bind_param("ss", $cleanVisitorName, $cleanVisitorEmail);
             $stmt->execute();
-            return $stmt->error;
+
+            if (empty($stmt->error))
+            {
+                return $stmt->insert_id;
+            }
+            else
+            {
+                return $stmt->error;
+            }
         }
         else
         {
-            return "Exists";
+            return $result->visitorID;
         }
     }
 

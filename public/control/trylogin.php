@@ -3,13 +3,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
     require_once "class/accountDL.php";
 
-    $account = new accountDL();
+    $accountDL = new accountDL();
     $accountobj = new account();
 
     $accountobj->userName = $_POST['username'];
     $accountobj->userPassword = $_POST['password'];
 
-    $result = $account->readAccount($accountobj->userName);
+    $result = $accountDL->readAccount($accountobj->userName);
 
     if (!empty($result))
     {
