@@ -6,7 +6,9 @@
     </ol>
 </nav>
 <main>
-    <h1>Reserveren</h1>
+    <h2 class="page-header">
+        Reserveren
+    </h2>
     <form method="POST" action="/reserveringsysteem/public/control/addReservation.php">
         <table>
             <tr>

@@ -2,11 +2,11 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Archief</li>
+            <li class="breadcrumb-item active" aria-current="page">Overzicht</li>
         </ol>
     </nav>
-    <main class="text-center">
-        <h2>
+    <main>
+        <h2 class="page-header">
             Overzicht
         </h2>
     </main>
@@ -25,14 +25,14 @@
         </thead>
         <tbody>
     <?php
-
+    require_once "../control/class/performanceDL.php";
     $performance = new performanceDL();
 
     $allperformances = $performance->readAllPerformance();
 
     foreach ($allperformances as $row)
     {
-    echo "
+        echo "
             <tr class='table-light'>
                 <td class='text-center'>$row->showID</td>
                 <td class='text-center'>$row->name</td>
@@ -43,7 +43,9 @@
                 <td class='text-center'>$row->max</td>
                 <td class='text-center'>$row->past</td>
             </tr>
+        ";
+    }
+    ?>
         </tbody>
-    ";}?>
     </table>
 <?php include "../includes/footer.php"; ?>

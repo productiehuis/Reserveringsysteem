@@ -6,7 +6,7 @@
     </ol>
 </nav>
 <main>
-    <h1>Vertoningen toevoegen</h1>
+    <h2 class="page-header">Vertoningen toevoegen</h2>
     <form method="POST" action="/reserveringsysteem/public/control/addPerformance.php">
         <table>
             <tr>

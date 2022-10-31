@@ -87,3 +87,8 @@ a
 {
   cursor: default;
 }
+
+.page-header
+{
+  text-align: center;
+}
