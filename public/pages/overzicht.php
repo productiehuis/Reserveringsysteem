@@ -1,32 +1,47 @@
-<?php include "../includes/header.php"; ?>
-    <main class="text-center">
+<?php include "../includes/header.php";
+
+require_once "../control/class/performanceDL.php";
+
+?>
+    <main class=\"text-center\">
         <h2>
             Overzicht
         </h2>
     </main>
-    <table class="table table-responsive-xxl">
+    <table class='table table-responsive-xxl overflow-scroll'>
         <thead>
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Naam</th>
-            <th scope="col">Omschrijving</th>
-            <th scope="col">Begintijd</th>
-            <th scope="col">Datum</th>
-            <th scope="col">Locatie</th>
-            <th scope="col">Zitplaatsen</th>
-            <th scope="col">Voorbij</th>
-        </tr>
+            <tr class="m-3 rounded">
+                <th>ID</th>
+                <th>Naam</th>
+                <th>Omschrijving</th>
+                <th>Begintijd</th>
+                <th>Datum</th>
+                <th>Locatie</th>
+                <th>Zitplaatsen</th>
+                <th>Voorbij</th>
+            </tr>
         </thead>
-        <tbody class="table table-striped table-responsive-xxl">
-        <tr>
-            <th scope="row">1</th>
-            <td>Lorem</td>
-            <td>Ipsum</td>
-            <td>12:00</td>
-            <td>20-20-2022</td>
-            <td>Productiehuis</td>
-            <td>69</td>
-            <td>TRUE</td>
+        <tbody>
+    <?php
+
+    $performance = new performanceDL();
+
+    $allperformances = $performance->readAllPerformance();
+
+    foreach ($allperformances as $row)
+    {
+    echo "
+            <tr class='table-light'>
+                <td class='text-center'>$row->showID</td>
+                <td class='text-center'>$row->name</td>
+                <td class='text-center'>$row->description</td>
+                <td class='text-center'>$row->starttime</td>
+                <td class='text-center'>$row->date</td>
+                <td class='text-center'>$row->location</td>
+                <td class='text-center'>$row->max</td>
+                <td class='text-center'>$row->past</td>
+            </tr>
         </tbody>
+    ";}?>
     </table>
 <?php include "../includes/footer.php"; ?>
