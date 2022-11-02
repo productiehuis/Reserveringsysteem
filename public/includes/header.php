@@ -5,14 +5,10 @@ session_start();
     <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link href="/reserveringsysteem/public/css/bootstrap.min.css" rel="stylesheet">
         <link href="/reserveringsysteem/public/css/index-addon.css" rel="stylesheet">
-        <script src="/reserveringsysteem/public/js/bootstrap.bundle.js" defer></script>
-        <script src="/reserveringsysteem/node_modules/sweetalert2/dist/sweetalert2.all.min.js" defer></script>
-        <script src="/reserveringsysteem/public/js/header.js" defer></script>
         <title>KW1C Reserveringssysteem</title>
     </head>
     <body>

@@ -15,16 +15,17 @@
         </div>
         <table class='table table-responsive-xxl overflow-scroll'>
             <thead>
-            <tr class="m-3 rounded">
-                <th>ID</th>
-                <th>Naam</th>
-                <th>Omschrijving</th>
-                <th>Begintijd</th>
-                <th>Datum</th>
-                <th>Locatie</th>
-                <th>Zitplaatsen</th>
-                <th>Voorbij</th>
-            </tr>
+                <tr class="m-3 rounded">
+                    <th>ID</th>
+                    <th>Naam</th>
+                    <th>Omschrijving</th>
+                    <th>Begintijd</th>
+                    <th>Datum</th>
+                    <th>Locatie</th>
+                    <th>Zitplaatsen</th>
+                    <th></th>
+                    <th></th>
+                </tr>
             </thead>
             <tbody>
             <?php
@@ -35,18 +36,23 @@
 
             foreach ($allperformances as $row)
             {
-                echo "
-            <tr class='table-light'>
-                <td class='text-center'>$row->showID</td>
-                <td class='text-center'>$row->name</td>
-                <td class='text-center'>$row->description</td>
-                <td class='text-center'>$row->starttime</td>
-                <td class='text-center'>$row->date</td>
-                <td class='text-center'>$row->location</td>
-                <td class='text-center'>$row->max</td>
-                <td class='text-center'>$row->past</td>
-            </tr>
-        ";
+                if(!$row->past == 1)
+                {
+                    $past = strval($row->past);
+                    echo "
+                    <tr class='table-light'>
+                        <td class='text-center'>$row->showID</td>
+                        <td class='text-center'>$row->name</td>
+                        <td class='text-center'>$row->description</td>
+                        <td class='text-center'>$row->starttime</td>
+                        <td class='text-center'>$row->date</td>
+                        <td class='text-center'>$row->location</td>
+                        <td class='text-center'>$row->max</td>
+                        <td><button class='btn btn-warning' id='$row->showID'><i class='bi bi-pencil'></i></button></td>
+                        <td><button class='btn btn-danger delete' id='$row->showID'><i class=\"bi bi-trash\"></i></button></td>
+                    </tr>
+                    ";
+                }
             }
             ?>
             </tbody>

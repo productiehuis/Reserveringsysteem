@@ -26,10 +26,10 @@ class performanceDL extends connection
         return $stmt->error;
     }
 
-    public function readPerformance(int $id)
+    public function readPerformance(int $showId)
     {
         $performance = new performance();
-        $cleanId = intval($this->sanitize($id));
+        $cleanId = intval($this->sanitize($showId));
 
         $stmt = $this->con->prepare("SELECT * FROM performance WHERE showID = ?");
         $stmt->bind_param("i", $cleanId);
@@ -81,5 +81,16 @@ class performanceDL extends connection
         }
 
         return $return;
+    }
+
+    public function deletePerformance(int $showId)
+    {
+        $cleanId = intval($this->sanitize($showId));
+
+        $stmt = $this->con->prepare("DELETE FROM performance WHERE showID = ?");
+        $stmt->bind_param("i", $cleanId);
+        $stmt->execute();
+
+        return $stmt->error;
     }
 }
