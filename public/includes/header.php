@@ -62,12 +62,6 @@ session_start();
                                     </svg>
                                     Toevoegen
                                     </a>
-                                    <a href=\"/reserveringsysteem/public/pages/archief.php\" class='rounded'>
-                                    <svg xmlns\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-archive\" viewBox=\"0 0 16 16\">
-                                      <path d=\"M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1V2zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5H2zm13-3H1v2h14V2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z\"/>
-                                    </svg>
-                                    Archief
-                                    </a>
                                     <a href=\"/reserveringsysteem/public/control/logout.php\" class='rounded'>
                                     <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-door-closed\" viewBox=\"0 0 16 16\">
                                       <path d=\"M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2zm1 13h8V2H4v13z\"/>
@@ -84,7 +78,7 @@ session_start();
                     {
                         echo "
                         <button class='btn btn-danger rounded text-center' type='button'>
-                            <a href='/reserveringsysteem/public/pages/login.php'>
+                            <a class='text-white' href='/reserveringsysteem/public/pages/login.php'>
                                 <svg xmlns='http://www.w3.org/2000/svg\' width='16' height='16' fill='currentColor' class='bi bi-columns' viewBox='0 0 16 16'>
                                     <path d='M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V2zm8.5 0v8H15V2H8.5zm0 9v3H15v-3H8.5zm-1-9H1v3h6.5V2zM1 14h6.5V6H1v8z'/>
                                 </svg> Login

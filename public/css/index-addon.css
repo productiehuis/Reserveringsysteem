@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
 .kw1c-blue
 {
   background-color: rgb(14, 133, 199)!important;
@@ -39,9 +41,9 @@ a
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   min-width: 9rem;
-  z-index: 1;
+  z-index: 999;
 }
 
 .dropdown-content a

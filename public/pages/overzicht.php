@@ -9,9 +9,12 @@
         <h2 class="page-header">
             Overzicht
         </h2>
-    </main>
-    <table class='table table-responsive-xxl overflow-scroll'>
-        <thead>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <a type="button" class="btn btn-primary active"><i class="bi bi-calendar-check"></i> Huidig</a>
+            <a href="archief.php" type="button" class="btn btn-primary"><i class="bi bi-archive"></i> Archief</a>
+        </div>
+        <table class='table table-responsive-xxl overflow-scroll'>
+            <thead>
             <tr class="m-3 rounded">
                 <th>ID</th>
                 <th>Naam</th>
@@ -22,17 +25,17 @@
                 <th>Zitplaatsen</th>
                 <th>Voorbij</th>
             </tr>
-        </thead>
-        <tbody>
-    <?php
-    require_once "../control/class/performanceDL.php";
-    $performance = new performanceDL();
+            </thead>
+            <tbody>
+            <?php
+            require_once "../control/class/performanceDL.php";
+            $performance = new performanceDL();
 
-    $allperformances = $performance->readAllPerformance();
+            $allperformances = $performance->readAllPerformance();
 
-    foreach ($allperformances as $row)
-    {
-        echo "
+            foreach ($allperformances as $row)
+            {
+                echo "
             <tr class='table-light'>
                 <td class='text-center'>$row->showID</td>
                 <td class='text-center'>$row->name</td>
@@ -44,8 +47,9 @@
                 <td class='text-center'>$row->past</td>
             </tr>
         ";
-    }
-    ?>
-        </tbody>
-    </table>
+            }
+            ?>
+            </tbody>
+        </table>
+    </main>
 <?php include "../includes/footer.php"; ?>
