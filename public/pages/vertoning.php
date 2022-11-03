@@ -7,6 +7,11 @@
 </nav>
 <main>
     <h2 class="page-header">Vertoningen toevoegen</h2>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <a href="overzicht.php" type="button" class="btn btn-primary active"><i class="bi bi-calendar-check"></i> Overzicht</a>
+        <a href="archief.php" type="button" class="btn btn-primary"><i class="bi bi-archive"></i> Archief</a>
+        <a href="vertoning.php" type="button" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Toevoegen</a>
+    </div>
     <form method="POST" action="/reserveringsysteem/public/control/addPerformance.php">
         <table>
             <tr>
@@ -14,7 +19,9 @@
                     Vertoningen titel:
                 </td>
                 <td>
-                    <input type="text" name="title" required>
+                    <label>
+                        <input type="text" name="title" required>
+                    </label>
                 </td>
             </tr>
             <tr>
@@ -22,7 +29,9 @@
                     Locatie:
                 </td>
                 <td>
-                    <input type="text" name="location" required>
+                    <label>
+                        <input type="text" name="location" required>
+                    </label>
                 </td>
             </tr>
             <tr>
@@ -30,7 +39,9 @@
                     Description:
                 </td>
                 <td>
-                    <textarea name="description" required></textarea>
+                    <label>
+                        <textarea rows="5" cols="40" name="description" required></textarea>
+                    </label>
                 </td>
             </tr>
             <tr>
@@ -38,7 +49,9 @@
                     Tijd:
                 </td>
                 <td>
-                    <input type="time" name="time" required>
+                    <label>
+                        <input type="time" name="time" required>
+                    </label>
                 </td>
             </tr>
             <tr>
@@ -46,7 +59,9 @@
                     Datum:
                 </td>
                 <td>
-                    <input type="date" name="date" required>
+                    <label>
+                        <input type="date" name="date" required>
+                    </label>
                 </td>
             </tr>
             <tr>
@@ -54,7 +69,9 @@
                     Maximum aantal zitplaatsen:
                 </td>
                 <td>
-                    <input type="number" name="max" required>
+                    <label>
+                        <input type="number" name="max" required>
+                    </label>
                 </td>
             </tr>
             <tr>

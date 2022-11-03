@@ -10,7 +10,7 @@
         Archief
     </h2>
     <div class="btn-group" role="group" aria-label="Basic example">
-        <a href="overzicht.php" type="button" class="btn btn-primary"><i class="bi bi-calendar-check"></i> Huidig</a>
+        <a href="overzicht.php" type="button" class="btn btn-primary"><i class="bi bi-calendar-check"></i> Overzicht</a>
         <a type="button" class="btn btn-primary active"><i class="bi bi-archive"></i> Archief</a>
     </div>
 </main>
