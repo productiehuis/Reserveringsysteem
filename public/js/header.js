@@ -1,8 +1,9 @@
 window.onscroll = function() {
     getMyStickyHeader()
 };
-var navbar = document.getElementById("navbar");
-var stickyHeader = navbar.offsetTop;
+const navbar = document.getElementById("navbar");
+const stickyHeader = navbar.offsetTop;
+
 function getMyStickyHeader() {
     if (window.pageYOffset >= stickyHeader) {
         navbar.classList.add("stickyHeader")
