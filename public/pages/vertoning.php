@@ -8,9 +8,9 @@
 <main>
     <h2 class="page-header">Vertoningen toevoegen</h2>
     <div class="btn-group" role="group" aria-label="Basic example">
-        <a href="overzicht.php" type="button" class="btn btn-primary active"><i class="bi bi-calendar-check"></i> Overzicht</a>
+        <a href="overzicht.php" type="button" class="btn btn-primary"><i class="bi bi-calendar-check"></i> Overzicht</a>
         <a href="archief.php" type="button" class="btn btn-primary"><i class="bi bi-archive"></i> Archief</a>
-        <a href="vertoning.php" type="button" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Toevoegen</a>
+        <a href="vertoning.php" type="button" class="btn btn-primary active"><i class="bi bi-plus-circle"></i> Toevoegen</a>
     </div>
     <form method="POST" action="/reserveringsysteem/public/control/addPerformance.php">
         <table>

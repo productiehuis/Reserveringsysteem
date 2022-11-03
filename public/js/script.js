@@ -1,7 +1,5 @@
-const deleteButtons = document.querySelectorAll(".delete");
-
-deleteButtons.forEach(button => {
-    button.addEventListener("click", function handleClick(event) {
+$(".delete").click(
+    function () {
         Swal.fire({
             title: "Weet je het zeker?",
             text: "Deze actie kan niet worden teruggedraaid.",
@@ -42,8 +40,8 @@ deleteButtons.forEach(button => {
                 })
             }
         })
-    })
-});
+    }
+)
 
 function refresh()
 {

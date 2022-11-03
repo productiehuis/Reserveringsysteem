@@ -42,13 +42,13 @@
                     $past = strval($row->past);
                     echo "
                     <tr class='table-light'>
-                        <td class='text-center'>$row->showID</td>
-                        <td class='text-center'>$row->name</td>
-                        <td class='text-center'>$row->description</td>
-                        <td class='text-center'>$row->starttime</td>
-                        <td class='text-center'>$row->date</td>
-                        <td class='text-center'>$row->location</td>
-                        <td class='text-center'>$row->max</td>
+                        <td class='text-center'><p>$row->showID</p></td>
+                        <td class='text-center'><p>$row->name</p></td>
+                        <td class='text-center'><p>$row->description</p></td>
+                        <td class='text-center'><p>$row->starttime</p></td>
+                        <td class='text-center'><p>$row->date</p></td>
+                        <td class='text-center'><p>$row->location</p></td>
+                        <td class='text-center'><p>$row->max</p></td>
                         <td><button class='btn btn-warning' id='$row->showID'><i class='bi bi-pencil'></i></button></td>
                         <td><button class='btn btn-danger delete' id='$row->showID'><i class=\"bi bi-trash\"></i></button></td>
                     </tr>

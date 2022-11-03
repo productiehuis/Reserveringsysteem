@@ -1,9 +1,30 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
 
+@font-face {
+  font-family: "Sintony";
+  src: url("font/Sintony-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: url("font/Oswald-VariableFont_wght.ttf");
+}
+
+* a, p, small, li
+{
+  font-family: Sintony, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+  font-family: Oswald, sans-serif;
+}
+
 .kw1c-blue
 {
   background-color: rgb(14, 133, 199)!important;
 }
+
 #Image_3
 {
   display: block;
@@ -30,6 +51,7 @@ a
 {
   color: ghostwhite;
 }
+
 .card
 {
   display: flex;
@@ -93,4 +115,43 @@ a
 .page-header
 {
   text-align: center;
+}
+
+.radius-button
+{
+  margin-top: 7px;
+}
+
+.radius-input:first-child
+{
+  margin-top: 7px;
+}
+
+.radius-input
+{
+  height: 45px;
+  border: none;
+  background: rgba(255,255,255,.3);
+  width: calc(100% - 60px);
+  border-radius: 30px;
+  padding: 0 30px;
+  margin-bottom: 7px;
+  color: white;
+}
+
+.radius-input::placeholder
+{
+  color: white;
+}
+
+.logInBackground
+{
+  background-color: red;
+  border-radius: 30px;
+}
+
+.center
+{
+  margin-left: auto;
+  margin-right: auto;
 }

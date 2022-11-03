@@ -49,21 +49,34 @@ if (isset($_SESSION["Username"]))
     </header>
     <main class="text-center mt-5">
             <form method="POST" action="/reserveringsysteem/public/control/trylogin.php">
-            <label>
-                <input name="username" type="text" placeholder="Gebruikersnaam">
-            </label>
-            <label>
-                <input name="password" type="password" placeholder="Wachtwoord">
-            </label>
-            <button class="btn btn-primary mb-2" type="submit">Log in</button>
-            <?php
+                <table class="logInBackground center">
+                    <tbody>
+                    <tr>
+                        <td>
 
-            if (isset($_GET["s"]) && $_GET["s"] == 0)
-            {
-                echo "<p class='error'>Log in niet gelukt</p>";
-            }
+                            <input class="radius-input" name="username" type="text" placeholder="Gebruikersnaam">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="radius-input" name="password" type="password" placeholder="Wachtwoord">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="btn btn-primary mb-2 radius-button" type="submit">Log in</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <?php
 
-            ?>
+                if (isset($_GET["s"]) && $_GET["s"] == 0)
+                {
+                    echo "<p class='error'>Log in niet gelukt</p>";
+                }
+
+                ?>
         </form>
     </main>
 <?php include "../includes/footer.php"?>
