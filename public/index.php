@@ -7,9 +7,7 @@
         </nav>
         <main>
             <div class="container">
-                <div class="row">
-                    <?php include "./includes/card.php"?>
-                </div>
+                <?php include "./includes/card.php"?>
             </div>
         </main>
 <?php include "./includes/footer.php"?>

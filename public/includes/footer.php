@@ -12,8 +12,9 @@ $currentYear = date("Y")
                 </footer>
             </div>
         </footer>
-        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script src="/reserveringsysteem/public/js/bootstrap.bundle.js" defer></script>
+        <script src="/reserveringsysteem/node_modules/sweetalert2/dist/sweetalert2.all.min.js" defer></script>
         <script src="/reserveringsysteem/public/js/script.js" defer></script>
     </body>
 </html>
