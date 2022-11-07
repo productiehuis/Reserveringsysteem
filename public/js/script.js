@@ -1,3 +1,4 @@
+// Delete function
 $(".delete").click(
     function () {
         Swal.fire({
@@ -42,6 +43,29 @@ $(".delete").click(
         })
     }
 )
+// Edit funtion
+$(".edit").click(
+    
+)
+
+function conformation() {
+    Swal.fire({
+        title: 'Weet je het zeker?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Ja, ik weet het zeker!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+                'Verwijderd!',
+                'Input is verwijderd.',
+                'success'
+            )
+        }
+    })
+}
 
 function refresh()
 {
