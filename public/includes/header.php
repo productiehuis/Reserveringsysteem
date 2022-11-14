@@ -44,7 +44,7 @@ session_start();
                                 <div class='dropdown-content rounded'>
                                     <a href='/reserveringsysteem/public/pages/overzicht.php' class='rounded bi-card-list'> Overzicht
                                     </a>
-                                    <a href='/reserveringsysteem/public/pages/vertoning.php' class='rounded bi-list'> Toevoegen
+                                    <a href='/reserveringsysteem/public/pages/archief.php' class='rounded bi-list'> Archief
                                     </a>
                                     <a href='/reserveringsysteem/public/control/logout.php\' class='rounded bi-door-closed'> Log uit
                                     </a>
