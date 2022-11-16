@@ -1,10 +1,4 @@
 <?php include "../includes/header.php"; ?>
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Overzicht / Event toevoegen</li>
-    </ol>
-</nav>
 <main>
     <h2 class="page-header">Voorstelling / Event toevoegen</h2>
     <div class="btn-group" role="group" aria-label="Basic example">

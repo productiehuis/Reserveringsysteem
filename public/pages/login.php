@@ -53,7 +53,6 @@ if (isset($_SESSION["Username"]))
                     <tbody>
                     <tr>
                         <td>
-
                             <label>
                                 <input class="radius-input" name="username" type="text" placeholder="Gebruikersnaam">
                             </label>
@@ -74,12 +73,10 @@ if (isset($_SESSION["Username"]))
                     </tbody>
                 </table>
                 <?php
-
                 if (isset($_GET["s"]) && $_GET["s"] == 0)
                 {
                     echo "<p class='error'>Log in niet gelukt</p>";
                 }
-
                 ?>
         </form>
     </main>
