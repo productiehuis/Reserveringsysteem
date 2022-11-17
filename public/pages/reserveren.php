@@ -3,56 +3,71 @@
     <h2 class="page-header">
         Reserveren
     </h2>
-    <form method="POST" action="/reserveringsysteem/public/control/addReservation.php">
-        <table>
-            <tr>
-                <td>
-                    Bezoeker naam:
-                </td>
-                <td>
-                    <input type="text" name="name" required>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    E-mail:
-                </td>
-                <td>
-                    <input type="text" name="email" required>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Aantal bezoekers:
-                </td>
-                <td>
-                    <input type="number" name="amount" required>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" class="text-center">
-                    <input type="hidden" name="showID" value="<?php echo $_GET["v"]?>">
-                    <input class="btn-primary btn" type="submit" value="Toevoegen">
-                </td>
-            </tr>
-        </table>
-        <?php
-        if (isset($_GET["s"]))
-        {
-            switch ($_GET["s"])
+    <div class="col-sm-6 col-sm-offset-3 center">
+        <form method="POST" action="/reserveringsysteem/public/control/addReservation.php">
+            <div class="row mb-3">
+                <label for="inputVistor" class="col-sm-2 col-form-label"> Naam:</label>
+                <div class="col-sm-10">
+                    <label>
+                        <input
+                                type="text"
+                                name="name"
+                                class="form-control"
+                                required>
+                    </label>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputEmail" class="col-sm-2 col-form-label"> Email:</label>
+                <div class="col-sm-10">
+                    <label>
+                        <input
+                                type="text"
+                                class="form-control"
+                                name="email"
+                                required>
+                    </label>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputAmount" class="col-sm-2 col-form-label"> Aantal bezoekers:</label>
+                <div class="col-sm-10">
+                    <label>
+                        <input
+                                type="number"
+                                class="form-control"
+                                name="amount"
+                                required>
+                    </label>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputAmount" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <label>
+                        <input type="hidden" name="showID" value="<?php echo $_GET["v"]?>">
+                        <input class="btn-primary btn" type="submit" value="Toevoegen">
+                    </label>
+                </div>
+            </div>
+            <?php
+            if (isset($_GET["s"]))
             {
-                case "1":
-                    echo "<p class='succes'>Reservering succesvol geplaatst, u ontvangt een bevestigingsmail.</p>";
-                    break;
-                case "2":
-                    echo "<p class='error'>Er zijn niet genoeg plaatsen.</p>";
-                    break;
-                default:
-                    echo "<p class='error'>Er is iets fout gegaan.</p>";
-                    break;
+                switch ($_GET["s"])
+                {
+                    case "1":
+                        echo "<p class='succes'>Reservering succesvol geplaatst, u ontvangt een bevestigingsmail.</p>";
+                        break;
+                    case "2":
+                        echo "<p class='error'>Er zijn niet genoeg plaatsen.</p>";
+                        break;
+                    default:
+                        echo "<p class='error'>Er is iets fout gegaan.</p>";
+                        break;
+                }
             }
-        }
-        ?>
-    </form>
+            ?>
+        </form>
+    </div>
 </main>
 <?php include "../includes/footer.php"; ?>
