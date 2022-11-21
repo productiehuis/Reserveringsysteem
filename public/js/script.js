@@ -45,7 +45,7 @@ $(".delete").click(
 )
 // Edit funtion
 $(".edit").click(
-    
+
 )
 
 function conformation() {
@@ -71,3 +71,12 @@ function refresh()
 {
     window.location = window.location.href;
 }
+// Zoek functie overzicht pagina
+$(document).ready(function(){
+    $("#searchTable").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $(".tableSearch tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+});

@@ -1,11 +1,4 @@
 <?php include "../includes/header.php"; ?>
-<script src="../js/addReservation.js" defer></script>
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Overzicht / Event toevoegen</li>
-    </ol>
-</nav>
 <main>
     <h2 class="page-header">Voorstelling / Event toevoegen</h2>
     <div class="btn-group" role="group" aria-label="Basic example">
@@ -100,11 +93,15 @@
                 switch ($_GET["s"])
                 {
                     case "1":
-                        echo "<p class='succes'>Vertoning succesvol toegevoegd.</p>";
-                        header("Location: /overzicht.php");
+                        echo "<div class='alert alert-success'>
+                                  <strong>Success!</strong> Je word doorgestuurd.
+                                </div>";
+                        echo '<script>window.location="./overzicht.php";</script>;';
                         break;
                     default:
-                        echo "<p class='error'>Er is iets fout gegaan.</p>";
+                        echo "<div class='alert alert-danger'>
+                                  <strong>ERROR!</strong> Er is iets fout gegaan.
+                                </div>";
                         break;
                 }
             }

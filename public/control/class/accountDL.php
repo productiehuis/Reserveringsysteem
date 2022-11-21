@@ -1,6 +1,5 @@
 <?php
 require_once "models/connection.php";
-include "models/account.php";
 class accountDL extends connection
 {
     protected $con;
@@ -29,12 +28,14 @@ class accountDL extends connection
 
     public function readAccount(string $username)
     {
+        require_once "models/account.php";
         $account = new account();
         $cleanUsername = $this->sanitize($username);
 
         $stmt = $this->con->prepare("SELECT * FROM account WHERE userName = ?");
         $stmt->bind_param("s", $cleanUsername);
         $stmt->execute();
+
         $result = $stmt->get_result();
         $item = $result->fetch_assoc();
         $stmt->close();

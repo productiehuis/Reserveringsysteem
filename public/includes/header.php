@@ -7,7 +7,7 @@ session_start();
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="/reserveringsysteem/public/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/reserveringsysteem/public/css/bootstrap.css" rel="stylesheet">
         <link href="/reserveringsysteem/public/css/index-addon.css" rel="stylesheet">
         <title>KW1C Reserveringssysteem</title>
     </head>
@@ -44,7 +44,7 @@ session_start();
                                 <div class='dropdown-content rounded'>
                                     <a href='/reserveringsysteem/public/pages/overzicht.php' class='rounded bi-card-list'> Overzicht
                                     </a>
-                                    <a href='/reserveringsysteem/public/pages/vertoning.php' class='rounded bi-list'> Toevoegen
+                                    <a href='/reserveringsysteem/public/pages/archief.php' class='rounded bi-list'> Archief
                                     </a>
                                     <a href='/reserveringsysteem/public/control/logout.php\' class='rounded bi-door-closed'> Log uit
                                     </a>

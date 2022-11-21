@@ -1,10 +1,4 @@
 <?php include "../includes/header.php"; ?>
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Archief</li>
-    </ol>
-</nav>
 <main>
     <h2 class="page-header">
         Archief
@@ -13,7 +7,8 @@
         <a href="overzicht.php" type="button" class="btn btn-primary"><i class="bi bi-calendar-check"></i> Overzicht</a>
         <a type="button" class="btn btn-primary active"><i class="bi bi-archive"></i> Archief</a>
     </div>
-    <table class='table table-responsive-xxl overflow-scroll'>
+    <input class="form-control mb-3 mt-3" id="searchTable" type="text" placeholder="Zoeken">
+    <table class='table table-responsive-xxl table-hover overflow-scroll'>
         <thead>
             <tr class="m-3 rounded">
                 <th>ID</th>
@@ -23,6 +18,7 @@
                 <th>Datum</th>
                 <th>Locatie</th>
                 <th>Zitplaatsen</th>
+                <th></th>
                 <th></th>
                 <th></th>
             </tr>
@@ -49,6 +45,7 @@
                         <td class='text-center'><p>$row->max</p></td>
                         <td><button class='btn btn-warning' id='$row->showID'><i class='bi bi-pencil'></i></button></td>
                         <td><button class='btn btn-danger delete' id='$row->showID'><i class='bi bi-trash'></i></button></td>
+                        <td><button class='btn btn-success' id='$row->showID'><i class='bi bi-file-earmark-spreadsheet'></i></button></td>
                     </tr>
                     ";
             }

@@ -40,7 +40,7 @@ if (isset($_SESSION["Username"]))
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
                         <li class="nav-item">
-                            <a class="nav-link active m-3" aria-current="page" href="/reserveringsysteem/public/index.php">Agenda</a>
+                            <a class="nav-link active m-3 border border-light rounded bg-white hover-button" aria-current="page" href="/reserveringsysteem/public/index.php">Agenda</a>
                         </li>
                     </ul>
                 </div>
@@ -53,13 +53,16 @@ if (isset($_SESSION["Username"]))
                     <tbody>
                     <tr>
                         <td>
-
-                            <input class="radius-input" name="username" type="text" placeholder="Gebruikersnaam">
+                            <label>
+                                <input class="radius-input" name="username" type="text" placeholder="Gebruikersnaam">
+                            </label>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input class="radius-input" name="password" type="password" placeholder="Wachtwoord">
+                            <label>
+                                <input class="radius-input" name="password" type="password" placeholder="Wachtwoord">
+                            </label>
                         </td>
                     </tr>
                     <tr>
@@ -70,12 +73,10 @@ if (isset($_SESSION["Username"]))
                     </tbody>
                 </table>
                 <?php
-
                 if (isset($_GET["s"]) && $_GET["s"] == 0)
                 {
                     echo "<p class='error'>Log in niet gelukt</p>";
                 }
-
                 ?>
         </form>
     </main>
