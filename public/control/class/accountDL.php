@@ -36,16 +36,16 @@ class accountDL extends connection
         $stmt->bind_param("s", $cleanUsername);
         $stmt->execute();
 
-        $result = $stmt->get_result();
-        $item = $result->fetch_assoc();
+        $stmt->bind_result($userID, $userName, $userPassword, $userLevel);
+        $result = $stmt->fetch();
         $stmt->close();
 
-        if (!empty($item))
+        if (!empty($result))
         {
-            $account->userID = $item["userID"];
-            $account->userName = $item["userName"];
-            $account->userPassword = $item["userHashedPassword"];
-            $account->userLevel = $item["userLevel"];
+            $account->userID = $userID;
+            $account->userName = $userName;
+            $account->userPassword = $userPassword;
+            $account->userLevel = $userLevel;
 
             return $account;
         }

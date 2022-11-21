@@ -45,7 +45,7 @@
                         <td class='text-center'><p>$row->max</p></td>
                         <td><button class='btn btn-warning' id='$row->showID'><i class='bi bi-pencil'></i></button></td>
                         <td><button class='btn btn-danger delete' id='$row->showID'><i class='bi bi-trash'></i></button></td>
-                        <td><button class='btn btn-success' id='$row->showID'><i class='bi bi-file-earmark-spreadsheet'></i></button></td>
+                        <td><a href='/reserveringsysteem/public/control/exportExcel.php?id=$row->showID' class='btn btn-success export'><i class='bi bi-file-earmark-spreadsheet'></i></a></td>
                     </tr>
                     ";
             }
