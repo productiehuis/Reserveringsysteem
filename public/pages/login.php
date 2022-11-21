@@ -53,7 +53,6 @@ if (isset($_SESSION["Username"]))
                     <tbody>
                     <tr>
                         <td>
-
                             <input class="radius-input" name="username" type="text" placeholder="Gebruikersnaam">
                         </td>
                     </tr>
