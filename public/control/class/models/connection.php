@@ -2,10 +2,10 @@
 class connection
 {
 
-    private static string $host = "localhost";
-    private static string $username = "root";
-    private static string $password = "";
-    private static string $dbname = "theaterreservering";
+    private string $host = "localhost";
+    private string $username = "root";
+    private string $password = "";
+    private string $dbname = "theaterreservering";
 
     public function __construct()
     {
