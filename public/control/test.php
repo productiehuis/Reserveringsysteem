@@ -8,9 +8,11 @@ ini_set('log_errors', 1);
 require_once "class/accountDL.php";
 require_once "class/performanceDL.php";
 require_once "class/visitorDL.php";
+require_once "class/reservationDL.php";
 $account = new accountDL();
 $performance = new performanceDL();
 $visitor = new visitorDL();
+$reservation = new reservationDL();
 
 
 
@@ -99,5 +101,11 @@ var_dump($visitor->createVisitor($visitorobj));
 */
 
 
+/*
+//READ RESERVATIONS PER PERFORMANCE
+echo "<PRE>";
 
+print_r($reservation->readReserved(5));
 
+echo "</PRE>";
+*/
