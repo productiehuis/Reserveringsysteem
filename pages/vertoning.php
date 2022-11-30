@@ -96,7 +96,7 @@
                         echo "<div class='alert alert-success'>
                                   <strong>Success!</strong> Je word doorgestuurd.
                                 </div>";
-                        echo '<script>window.location="./overzicht.php";</script>;';
+                        echo '<script>window.location="overzicht.php";</script>;';
                         break;
                     default:
                         echo "<div class='alert alert-danger'>

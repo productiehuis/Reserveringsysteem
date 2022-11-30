@@ -7,8 +7,8 @@ session_start();
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="public/css/bootstrap.css" rel="stylesheet">
-        <link href="public/css/index-addon.css" rel="stylesheet">
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/index-addon.css" rel="stylesheet">
         <title>KW1C Reserveringssysteem</title>
     </head>
     <body>
@@ -31,7 +31,7 @@ session_start();
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
                     <li class="nav-item">
-                      <a class="nav-link active m-3 border border-light rounded bg-white hover-button" aria-current="page" href="/reserveringsysteem/public/index.php">Agenda</a>
+                      <a class="nav-link active m-3 border border-light rounded bg-white hover-button" aria-current="page" href="index.php">Agenda</a>
                     </li>
                   </ul>
                     <?php
@@ -42,8 +42,8 @@ session_start();
                             <li class='dropdown hover'>
                             <span href='javascript:void(0)' class='dropbtn hover text-white'>Welkom "  . $_SESSION["Username"]  ."<span class='bi-three-dots-vertical'></span></span>
                                 <div class='dropdown-content rounded'>
-                                    <a href='/reserveringsysteem/public/pages/overzicht.php' class='rounded bi-card-list'> Overzicht</a>
-                                    <a href='/reserveringsysteem/public/control/logout.php\' class='rounded bi-door-closed'> Log uit</a>
+                                    <a href='pages/overzicht.php' class='rounded bi-card-list'> Overzicht</a>
+                                    <a href='public/control/logout.php\' class='rounded bi-door-closed'> Log uit</a>
                                 </div>
                             </li>
                         </div>   
@@ -53,7 +53,7 @@ session_start();
                     {
                         echo "
                         <button class='btn btn-danger rounded text-center bi-door-open' type='button'>
-                            <a class='text-white' href='/reserveringsysteem/public/pages/login.php'>Login
+                            <a class='text-white' href='pages/login.php'>Login
                             </a>
                         </button>
                         ";

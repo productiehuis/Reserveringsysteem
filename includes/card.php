@@ -14,7 +14,7 @@ foreach ($allperformances as $row)
     {
         echo "
             <div class=\"card col-3\">
-                <img src=\"/reserveringsysteem/public/img/placeholder.png\" class=\"rounded mt-2 card-img-top\">
+                <img src=\"img/placeholder.png\" class=\"rounded mt-2 card-img-top\">
                 <div class=\"card-body\">
                     <h5 class=\"card-title\">$row->name</h5>
                     <p class=\"card-text\">

@@ -1,7 +1,6 @@
 <?php
 class connection
 {
-
     private string $host = "localhost";
     private string $username = "root";
     private string $password = "";
