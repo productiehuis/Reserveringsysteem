@@ -42,12 +42,8 @@ session_start();
                             <li class='dropdown hover'>
                             <span href='javascript:void(0)' class='dropbtn hover text-white'>Welkom "  . $_SESSION["Username"]  ."<span class='bi-three-dots-vertical'></span></span>
                                 <div class='dropdown-content rounded'>
-                                    <a href='/reserveringsysteem/public/pages/overzicht.php' class='rounded bi-card-list'> Overzicht
-                                    </a>
-                                    <a href='/reserveringsysteem/public/pages/archief.php' class='rounded bi-list'> Archief
-                                    </a>
-                                    <a href='/reserveringsysteem/public/control/logout.php\' class='rounded bi-door-closed'> Log uit
-                                    </a>
+                                    <a href='/reserveringsysteem/public/pages/overzicht.php' class='rounded bi-card-list'> Overzicht</a>
+                                    <a href='/reserveringsysteem/public/control/logout.php\' class='rounded bi-door-closed'> Log uit</a>
                                 </div>
                             </li>
                         </div>   
