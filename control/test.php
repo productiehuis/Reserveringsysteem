@@ -38,10 +38,13 @@ echo $account->createAccount($accountobj);
 var_dump($account->readAccount("admin"));
 */
 
-$con = new mysqli("localhost", "root", "", "theaterreservering");
+$conn = mysqli_init();
+mysqli_ssl_set($conn,NULL,NULL, "{path to CA cert}", NULL, NULL);
+mysqli_real_connect($conn, "reserveringsysteem.mysql.database.azure.com", "productiehuis", "P@ssword1234", "theaterreservering", 3306, MYSQLI_CLIENT_SSL);
+
+echo(mysqli_get_server_version($conn));
 
 
-echo(mysqli_get_server_version($con));
 
 
 /*
