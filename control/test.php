@@ -70,11 +70,11 @@ var_dump($performance->readPerformance("1"));
 */
 
 
-/*
+
 //READ ALL PERFORMANCE
 
 var_dump($performance->readAllPerformance());
-*/
+
 
 
 
