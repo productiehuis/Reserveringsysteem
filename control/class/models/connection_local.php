@@ -1,9 +1,9 @@
 <?php
 class connection
 {
-    private string $host = "reserveringsysteem.mysql.database.azure.com";
-    private string $username = "productiehuis";
-    private string $password = "P@ssword1234";
+    private string $host = "localhost";
+    private string $username = "root";
+    private string $password = "";
     private string $dbname = "theaterreservering";
 
     public function __construct()
@@ -32,6 +32,7 @@ class connection
             $con = "Database connection failed contact an administrator with the following error. " . $exception->getMessage();
             return $con;
         }
+
     }
 
     public function sanitize($input)
