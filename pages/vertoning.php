@@ -7,29 +7,17 @@
         <a href="vertoning.php" type="button" class="btn btn-primary active"><i class="bi bi-plus-circle"></i> Toevoegen</a>
     </div>
     <div class="center col-sm-6 col-sm-offset-3">
-        <form method="POST" action="/reserveringsysteem/public/control/addPerformance.php">
+        <form method="POST" action="/control/addPerformance.php">
             <div class="row mb-3">
                 <label for="inputName" class="col-sm-2 col-form-label"> Naam</label>
                 <div class="col-sm-10">
-                    <input
-                            type="text"
-                            name="title"
-                            class="form-control"
-                            id="inputName"
-                            placeholder="Titel vertoning"
-                            required>
+                    <input type="text" name="title" class="form-control" id="inputName" placeholder="Titel vertoning" required>
                 </div>
             </div>
             <div class="row mb-3">
                 <label for="inputDescription" class="col-sm-2 col-form-label"> Omschrijving</label>
                 <div class="col-sm-10">
-                    <input
-                            type="text"
-                            name="description"
-                            class="form-control"
-                            id="inputDescription"
-                            placeholder="Extra informatie"
-                            required>
+                    <input type="text" name="description" class="form-control" id="inputDescription" placeholder="Extra informatie" required>
                 </div>
             </div>
             <fieldset class="row mb-3">
@@ -52,13 +40,7 @@
                 <label for="form-size" class="col-sm-2 col-form-label"> Hoeveelheid</label>
                 <div class="col-sm-10">
                     <label>
-                        <input
-                                class="form-control"
-                                type="number"
-                                placeholder="Capaciteit"
-                                id="form-size"
-                                name="max"
-                        />
+                        <input class="form-control" type="number" placeholder="Capaciteit" id="form-size" name="max"/>
                     </label>
                 </div>
             </div>
@@ -66,10 +48,7 @@
                 <label for="form-size" class="col-sm-2 col-form-label"> Datum</label>
                 <div class="col-sm-10">
                     <label>
-                        <input
-                                type="date"
-                                name="date"
-                                class="form-control">
+                        <input type="date" name="date" class="form-control">
                     </label>
                 </div>
             </div>
@@ -77,10 +56,7 @@
                 <label for="form-size" class="col-sm-2 col-form-label"> Tijd</label>
                 <div class="col-sm-10">
                     <label>
-                        <input
-                                type="time"
-                                name="time"
-                                class="form-control">
+                        <input type="time" name="time" class="form-control">
                     </label>
                 </div>
             </div>

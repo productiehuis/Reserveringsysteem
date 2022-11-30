@@ -48,7 +48,7 @@ if (isset($_SESSION["Username"]))
         </nav>
     </header>
     <main class="text-center mt-5">
-            <form method="POST" action="../control/trylogin.php">
+            <form method="POST" action="/control/trylogin.php">
                 <table class="logInBackground center">
                     <tbody>
                     <tr>
