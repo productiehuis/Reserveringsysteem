@@ -1,5 +1,6 @@
 <?php
 require_once "models/connection.php";
+include "models/account.php";
 class accountDL extends connection
 {
     protected $con;

@@ -3,7 +3,7 @@
     <h2 class="page-header">
         Archief
     </h2>
-    <div class="btn-group" role="group" aria-label="Basic example">
+    <div class="btn-group" role="group">
         <a href="overzicht.php" type="button" class="btn btn-primary"><i class="bi bi-calendar-check"></i> Overzicht</a>
         <a type="button" class="btn btn-primary active"><i class="bi bi-archive"></i> Archief</a>
     </div>
@@ -45,7 +45,7 @@
                         <td class='text-center'><p>$row->max</p></td>
                         <td><button class='btn btn-warning' id='$row->showID'><i class='bi bi-pencil'></i></button></td>
                         <td><button class='btn btn-danger delete' id='$row->showID'><i class='bi bi-trash'></i></button></td>
-                        <td><a href='/reserveringsysteem/public/control/exportExcel.php?id=$row->showID' class='btn btn-success export'><i class='bi bi-file-earmark-spreadsheet'></i></a></td>
+                        <td><a href='/control/exportExcel.php?id=$row->showID' class='btn btn-success export'><i class='bi bi-file-earmark-spreadsheet'></i></a></td>
                     </tr>
                     ";
             }
