@@ -16,7 +16,7 @@ class performanceDL extends connection
         $cleanVoorstellingNaam = $this->sanitize($data->name);
         $cleanDescription = $this->sanitize($data->description);
         $cleanBegintijd = $this->sanitize($data->starttime);
-        $cleanDatum = $this->sanitize($data->date);
+        $cleanDatum = date_format($data->date, "Y-m-d");
         $cleanLocatie = $this->sanitize($data->location);
         $cleanMax = $this->sanitize($data->max);
 
@@ -72,7 +72,7 @@ class performanceDL extends connection
             $performanceobj->name = $row->showName;
             $performanceobj->description = $row->description;
             $performanceobj->starttime = $row->startTime;
-            $performanceobj->date = $row->date;
+            $performanceobj->date =  new DateTimeImmutable($row->date);
             $performanceobj->location = $row->location;
             $performanceobj->max = $row->Max_seats;
             $performanceobj->past = $row->Past;

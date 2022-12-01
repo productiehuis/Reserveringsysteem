@@ -10,7 +10,10 @@ $count = 1;
 echo "<div class='row'>";
 foreach ($allperformances as $row)
 {
-    if ($row->past == 0)
+    $currentDate = new DateTimeImmutable();
+    $convertDate = date_format($row->date, "d-m-Y");
+
+    if ($row->date > $currentDate)
     {
         echo "
             <div class='card col-3'>

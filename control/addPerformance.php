@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $performanceobj->description = $_POST["description"];
     $performanceobj->location = $_POST["location"];
     $performanceobj->starttime = $_POST["time"];
-    $performanceobj->date = $_POST["date"];
+    $performanceobj->date = new DateTimeImmutable($_POST["date"]);
     $performanceobj->max = $_POST["max"];
 
     if ($performanceDL->createPerformance($performanceobj) === "")
