@@ -42,11 +42,12 @@ $(".delete").click(
             }
         })
     }
-)
+);
+
 // Edit funtion
 $(".edit").click(
 
-)
+);
 
 function conformation() {
     Swal.fire({

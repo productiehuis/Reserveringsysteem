@@ -1,8 +1,8 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
-    require_once "class/accountDL.php";
-
+    require_once 'class/accountDL.php';
+    require_once "class/models/account.php";
     $accountDL = new accountDL();
     $accountobj = new account();
 

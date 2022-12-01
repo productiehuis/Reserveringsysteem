@@ -42,4 +42,25 @@ class reservationDL extends connection
         }
     }
 
+    public function readReserved(int $showID)
+    {
+        $cleanShowID = $this->sanitize($showID);
+
+        $stmt = $this->con->prepare("SELECT * FROM reservation R JOIN visitor V ON R.visitorID = V.visitorID WHERE showID = ?");
+        $stmt->bind_param("i", $cleanShowID);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+
+        $return = [];
+
+        while ($row = $result->fetch_object())
+        {
+            $reserved = array("Bezoeker naam" => $row->visitorName, "Bezoeker email" => $row->visitorEmail, "Aantal mensen" => $row->countPeople);
+
+            array_push($return, $reserved);
+        }
+
+        return $return;
+    }
 }

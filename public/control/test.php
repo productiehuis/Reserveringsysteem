@@ -8,9 +8,12 @@ ini_set('log_errors', 1);
 require_once "class/accountDL.php";
 require_once "class/performanceDL.php";
 require_once "class/visitorDL.php";
+require_once "class/reservationDL.php";
 $account = new accountDL();
 $performance = new performanceDL();
 $visitor = new visitorDL();
+$reservation = new reservationDL();
+
 
 
 
@@ -35,12 +38,10 @@ echo $account->createAccount($accountobj);
 var_dump($account->readAccount("admin"));
 */
 
+$con = new mysqli("localhost", "root", "", "theaterreservering");
 
 
-
-
-
-
+echo(mysqli_get_server_version($con));
 
 
 /*
@@ -99,5 +100,11 @@ var_dump($visitor->createVisitor($visitorobj));
 */
 
 
+/*
+//READ RESERVATIONS PER PERFORMANCE
+echo "<PRE>";
 
+print_r($reservation->readReserved(5));
 
+echo "</PRE>";
+*/
