@@ -12,9 +12,9 @@ $currentYear = date("Y")
             </div>
         </footer>
         <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-        <script src="js/bootstrap.bundle.js" defer></script>
-        <script src="js/addReservation.js" defer></script>
-        <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js" defer></script>
-        <script src="js/script.js" defer></script>
+        <script src="/js/bootstrap.bundle.js" defer></script>
+        <script src="/js/addReservation.js" defer></script>
+        <script src="/node_modules/sweetalert2/dist/sweetalert2.all.min.js" defer></script>
+        <script src="/js/script.js" defer></script>
     </body>
 </html>

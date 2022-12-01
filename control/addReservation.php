@@ -1,18 +1,17 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
-    $showID = $_POST["showID"];
-    $visitorName = $_POST["name"];
-    $visitorEmail = $_POST["email"];
-    $countPeople = $_POST["amount"];
-
-
     require_once "class/visitorDL.php";
     $visitorDL = new visitorDL();
     require_once "class/reservationDL.php";
     $reservationDL = new reservationDL();
     require_once "class/performanceDL.php";
     $performanceDL = new performanceDL();
+
+    $showID = $_POST["showID"];
+    $visitorName = $_POST["name"];
+    $visitorEmail = $_POST["email"];
+    $countPeople = $_POST["amount"];
 
     $maxSeats = $performanceDL->readPerformance($showID)->max;
 

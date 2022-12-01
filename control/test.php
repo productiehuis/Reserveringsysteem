@@ -38,14 +38,6 @@ echo $account->createAccount($accountobj);
 var_dump($account->readAccount("admin"));
 */
 
-$conn = mysqli_init();
-//mysqli_ssl_set($conn,NULL,NULL, "{path to CA cert}", NULL, NULL);
-mysqli_real_connect($conn, "reserveringsysteem.mysql.database.azure.com", "productiehuis", "P@ssword1234", "theaterreservering", 3306, MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT	);
-
-echo(mysqli_get_server_version($conn));
-
-
-
 
 /*
 //CREATE PERFORMANCE
