@@ -6,7 +6,7 @@ class performance
     public string $name;
     public string $description;
     public string $starttime;
-    public string $date;
+    public DateTimeImmutable $date;
     public string $location;
     public int $max;
     public ?bool $past;

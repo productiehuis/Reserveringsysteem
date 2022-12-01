@@ -1,10 +1,9 @@
 <?php
 class connection
 {
-
-    private string $host = "localhost";
-    private string $username = "root";
-    private string $password = "";
+    private string $host = "reserveringsysteem.mysql.database.azure.com";
+    private string $username = "productiehuis";
+    private string $password = "P@ssword1234";
     private string $dbname = "theaterreservering";
 
     public function __construct()
@@ -12,6 +11,12 @@ class connection
         if(!isset($_SESSION))
         {
             session_start();
+        }
+
+        if (file_exists("connection_local.php"))
+        {
+            include "connection_local.php";
+            return;
         }
     }
 

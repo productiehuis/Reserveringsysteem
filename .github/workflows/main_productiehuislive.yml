@@ -56,5 +56,5 @@ jobs:
         with:
           app-name: 'productiehuislive'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AA8AFDD1B9574140A49FA638702E9A92 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_822A2E8E20E2477FBF211BF498062572 }}
           package: .

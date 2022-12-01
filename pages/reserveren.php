@@ -4,7 +4,7 @@
         Reserveren
     </h2>
     <div class="col-sm-6 col-sm-offset-3 center">
-        <form method="POST" action="/reserveringsysteem/public/control/addReservation.php">
+        <form method="POST" action="/control/addReservation.php">
             <div class="row mb-3">
                 <label for="inputVistor" class="col-sm-2 col-form-label"> Naam:</label>
                 <div class="col-sm-10">
