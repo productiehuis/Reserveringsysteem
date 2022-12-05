@@ -44,7 +44,7 @@ class performanceDL extends connection
             $performance->name = $item["showName"];
             $performance->description = $item["description"];
             $performance->starttime = $item["startTime"];
-            $performance->date = $item["date"];
+            $performance->date = new DateTimeImmutable($item["date"]);
             $performance->location = $item["location"];
             $performance->max = $item["Max_seats"];
             $performance->past = $item["Past"];
@@ -58,7 +58,7 @@ class performanceDL extends connection
 
     public function readAllPerformance()
     {
-        $stmt = $this->con->prepare("SELECT * FROM performance");
+        $stmt = $this->con->prepare("SELECT * FROM performance ORDER BY date");
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -72,7 +72,7 @@ class performanceDL extends connection
             $performanceobj->name = $row->showName;
             $performanceobj->description = $row->description;
             $performanceobj->starttime = $row->startTime;
-            $performanceobj->date =  new DateTimeImmutable($row->date);
+            $performanceobj->date = new DateTimeImmutable($row->date);
             $performanceobj->location = $row->location;
             $performanceobj->max = $row->Max_seats;
             $performanceobj->past = $row->Past;

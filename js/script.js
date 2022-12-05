@@ -14,7 +14,7 @@ $(".delete").click(
                 let showID = this.id;
 
                 $.ajax({
-                    url: "/reserveringsysteem/public/control/deletePerformance.php",
+                    url: "/control/deletePerformance.php",
                     method: "POST",
                     data: {id: showID},
                     success: function (response)

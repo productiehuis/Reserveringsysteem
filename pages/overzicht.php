@@ -3,7 +3,7 @@
         <h2 class="page-header">
             Overzicht
         </h2>
-        <div class="btn-group" role="group" aria-label="Basic example">
+        <div class="btn-group" role="group">
             <a type="button" class="btn btn-primary active"><i class="bi bi-calendar-check"></i> Huidig</a>
             <a href="archief.php" type="button" class="btn btn-primary"><i class="bi bi-archive"></i> Archief</a>
             <a href="vertoning.php" type="button" class="btn btn-primary add"><i class="bi bi-plus-circle"></i> Toevoegen</a>
@@ -33,21 +33,23 @@
 
             foreach ($allperformances as $row)
             {
-                if(!$row->past == 1)
+                $currentDate = new DateTimeImmutable();
+                $date = $row->date->format('d-m-Y');
+
+                if ($row->date > $currentDate)
                 {
-                    $past = strval($row->past);
                     echo "
                     <tr class='table-light'>
                         <td class='text-center'><p>$row->showID</p></td>
                         <td class='text-center'><p>$row->name</p></td>
                         <td class='text-center'><p>$row->description</p></td>
                         <td class='text-center'><p>$row->starttime</p></td>
-                        <td class='text-center'><p>$row->date</p></td>
+                        <td class='text-center'><p>$date</p></td>
                         <td class='text-center'><p>$row->location</p></td>
                         <td class='text-center'><p>$row->max</p></td>
-                        <td><button class='btn btn-warning' id='$row->showID'><i class='bi bi-pencil'></i></button></td>
+                        <td><button class='btn btn-warning' id='$row->showID' disabled><i class='bi bi-pencil' disabled></i></button></td>
                         <td><button class='btn btn-danger delete' id='$row->showID'><i class=\"bi bi-trash\"></i></button></td>
-                        <td><a href='/reserveringsysteem/public/control/exportExcel.php?id=$row->showID' class='btn btn-success export'><i class='bi bi-file-earmark-spreadsheet'></i></a></td>
+                        <td><a href='/control/exportExcel.php?id=$row->showID' class='btn btn-success export'><i class='bi bi-file-earmark-spreadsheet'></i></a></td>
                     </tr>
                     ";
                 }

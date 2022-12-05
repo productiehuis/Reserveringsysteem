@@ -38,11 +38,6 @@ echo $account->createAccount($accountobj);
 var_dump($account->readAccount("admin"));
 */
 
-$con = new mysqli("localhost", "root", "", "theaterreservering");
-
-
-echo(mysqli_get_server_version($con));
-
 
 /*
 //CREATE PERFORMANCE
@@ -72,14 +67,6 @@ var_dump($performance->readPerformance("1"));
 
 var_dump($performance->readAllPerformance());
 */
-
-
-
-
-
-
-
-
 
 
 /*

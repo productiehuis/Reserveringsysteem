@@ -2,8 +2,7 @@
 if (array_key_exists('id', $_GET))
 {
     $showid = $_GET['id'];
-
-    require_once "../control/class/reservationDL.php";
+    require_once "class/reservationDL.php";
     $reservation = new reservationDL();
 
     $allReservations = $reservation->readReserved($showid);
