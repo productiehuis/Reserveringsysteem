@@ -1,5 +1,5 @@
 <?php
-require_once "./control/class/performanceDL.php";
+require_once "control/class/performanceDL.php";
 
 $performanceDL = new performanceDL();
 
@@ -11,7 +11,7 @@ echo "<div class='row'>";
 foreach ($allperformances as $row)
 {
     $currentDate = new DateTimeImmutable();
-    $convertDate = date_format($row->date, "d-m-Y");
+    $date = $row->date->format('d-m-Y');
 
     if ($row->date > $currentDate)
     {
@@ -24,7 +24,7 @@ foreach ($allperformances as $row)
                         $row->description
                     </p>
                     <a id='$row->showID' href='/pages/reserveren.php?v=$row->showID' class='reservation btn btn-primary mb-2'>Reserveren</a>
-                    <p class='card-text'><small class='text-muted'>Datum: $row->date $row->starttime</small></p>
+                    <p class='card-text'><small class='text-muted'>Datum: $date $row->starttime</small></p>
                     <p class='card-text'><small class='text-muted'>Locatie: $row->location</small></p>
                 </div>
             </div>

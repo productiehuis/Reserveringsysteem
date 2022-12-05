@@ -28,7 +28,7 @@ class reservationDL extends connection
         $cleanShowID = $this->sanitize($showID);
 
         $stmt = $this->con->prepare("SELECT SUM(countPeople) as reserved FROM reservation WHERE showID = ?");
-        $stmt->bind_param("i", $showID);
+        $stmt->bind_param("i", $cleanShowID);
         $stmt->execute();
         $result = $stmt->get_result();
         $amount = intval($result->fetch_assoc()["reserved"]);

@@ -72,7 +72,7 @@
                         echo "<div class='alert alert-success'>
                                   <strong>Success!</strong> Je word doorgestuurd.
                                 </div>";
-                        echo '<script>setTimeout(() => {window.location="overzicht.php"}, 2000);</script>;';
+                        echo '<script>setTimeout(() => {window.location="overzicht.php"}, 2000);</script>';
                         break;
                     default:
                         echo "<div class='alert alert-danger'>
