@@ -4,7 +4,6 @@
     <div class="btn-group" role="group" aria-label="Basic example">
         <a href="overzicht.php" type="button" class="btn btn-primary"><i class="bi bi-calendar-check"></i> Overzicht</a>
         <a href="archief.php" type="button" class="btn btn-primary"><i class="bi bi-archive"></i> Archief</a>
-        <a href="vertoning.php" type="button" class="btn btn-primary active"><i class="bi bi-plus-circle"></i> Toevoegen</a>
     </div>
     <div class="center col-sm-6 col-sm-offset-3">
         <form method="POST" action="/control/addPerformance.php">
