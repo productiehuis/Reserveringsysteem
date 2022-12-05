@@ -83,6 +83,22 @@ class performanceDL extends connection
         return $return;
     }
 
+    public function updatePerformance(performance $data)
+    {
+        $cleanID = $this->sanitize($data->showID);
+        $cleanVoorstellingNaam = $this->sanitize($data->name);
+        $cleanDescription = $this->sanitize($data->description);
+        $cleanBegintijd = $this->sanitize($data->starttime);
+        $cleanDatum = date_format($data->date, "Y-m-d");
+        $cleanLocatie = $this->sanitize($data->location);
+        $cleanMax = $this->sanitize($data->max);
+
+        $stmt = $this->con->prepare("UPDATE performance SET showName = ?, description = ?, startTime = ?, date = ?, location = ?, Max_seats = ? WHERE showID = ?");
+        $stmt->bind_param("sssssii", $cleanVoorstellingNaam, $cleanDescription, $cleanBegintijd, $cleanDatum, $cleanLocatie, $cleanMax, $cleanID);
+        $stmt->execute();
+        return $stmt->error;
+    }
+
     public function deletePerformance(int $showId)
     {
         $cleanId = intval($this->sanitize($showId));

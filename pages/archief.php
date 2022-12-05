@@ -46,7 +46,7 @@
                         <td class='text-center'><p>$date</p></td>
                         <td class='text-center'><p>$row->location</p></td>
                         <td class='text-center'><p>$row->max</p></td>
-                        <td><button class='btn btn-warning' id='$row->showID' disabled><i class='bi bi-pencil' disabled></i></button></td>
+                        <td><button class='btn btn-warning edit' id='$row->showID'><i class='bi bi-pencil'></i></button></td>
                         <td><button class='btn btn-danger delete' id='$row->showID'><i class=\"bi bi-trash\"></i></button></td>
                         <td><a href='/control/exportExcel.php?id=$row->showID' class='btn btn-success export'><i class='bi bi-file-earmark-spreadsheet'></i></a></td>
                     </tr>
