@@ -63,14 +63,14 @@ function()
         showCancelButton: true,
         html:
             "<form class='form'>" +
-            "<input value='" + title + "' placeholder='Titel' type='text' id='titel'><br>" +
-            "<textarea placeholder='Beschrijving' id='beschrijving'>" + description + "</textarea><br>" +
-            "<input value='" + starttime + "' type='time' id='begintijd'>" +
-            "<input value='" + dateint + "' type='date' id='datum'><br>" +
-            "<input value='" + alocation + "' placeholder='Locatie' type='text' id='locatie'><br>" +
-            "<input value='" + seats + "' placeholder='Zitplaatsen' type='number' id='zitplaatsen'>" +
+            "<input value='" + title + "' placeholder='Titel' type='text' id='titel' class='form-control'><br>" +
+            "<textarea placeholder='Beschrijving' id='beschrijving' class='form-control'>" + description + "</textarea><br>" +
+            "<input value='" + starttime + "' type='time' id='begintijd' class='form-control'><br>" +
+            "<input value='" + dateint + "' type='date' id='datum' class='form-control'><br>" +
+            "<input value='" + alocation + "' placeholder='Locatie' type='text' id='locatie' class='form-control'><br>" +
+            "<input value='" + seats + "' placeholder='Zitplaatsen' type='number' id='zitplaatsen' class='form-control'>" +
             "</form>",
-    }).then(() =>
+    }).then((result) =>
     {
         if (result.isConfirmed)
         {
