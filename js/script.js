@@ -72,40 +72,43 @@ function()
             "</form>",
     }).then(() =>
     {
-        $.ajax({
-            url: "/control/editPerformance.php",
-            type: "POST",
-            data:
-                {
-                    id: this.id,
-                    title: $("#titel").val(),
-                    description: $("#beschrijving").val(),
-                    time: $("#begintijd").val(),
-                    date: $("#datum").val(),
-                    location: $("#locatie").val(),
-                    max: $("#zitplaatsen").val()
-                },
-            success: function (response) {
-                if (response == 0)
-                {
-                    Swal.fire({
-                        confirmButtonColor: '#3085d6',
-                        title: 'Vertoning is aangepast',
-                        confirmButtonText: 'Sluiten',
-                        icon: 'success',
-                        willClose: refresh,
-                    });
-                }
-                else
-                {
-                    Swal.fire(
+        if (result.isConfirmed)
+        {
+            $.ajax({
+                url: "/control/editPerformance.php",
+                type: "POST",
+                data:
+                    {
+                        id: this.id,
+                        title: $("#titel").val(),
+                        description: $("#beschrijving").val(),
+                        time: $("#begintijd").val(),
+                        date: $("#datum").val(),
+                        location: $("#locatie").val(),
+                        max: $("#zitplaatsen").val()
+                    },
+                success: function (response) {
+                    if (response == 0)
+                    {
+                        Swal.fire({
+                            confirmButtonColor: '#3085d6',
+                            title: 'Vertoning is aangepast',
+                            confirmButtonText: 'Sluiten',
+                            icon: 'success',
+                            willClose: refresh,
+                        });
+                    }
+                    else
+                    {
+                        Swal.fire(
                         {
                             title: 'Er is iets fout gegaan'
                         }
-                    )
+                        )
+                    }
                 }
-            }
-        })
+            })
+        }
     })
 }
 );
