@@ -16,16 +16,18 @@ foreach ($allperformances as $row)
     if ($row->date > $currentDate)
     {
         echo "
-            <div class='card col-3'>
-                <img src='/img/placeholder.png' class='rounded mt-2 card-img-top'>
-                <div class='card-body'>
-                    <h5 class='card-title'>$row->name</h5>
-                    <p class='card-text'>
-                        $row->description
-                    </p>
-                    <a id='$row->showID' href='/pages/reserveren.php?v=$row->showID' class='reservation btn btn-primary mb-2'>Reserveren</a>
-                    <p class='card-text'><small class='text-muted'>Datum: $date $row->starttime</small></p>
-                    <p class='card-text'><small class='text-muted'>Locatie: $row->location</small></p>
+            <div class='col-sm-3 mt-3'>
+                <div class='card'>
+                    <img src='/img/placeholder.png' class='rounded card-img-top'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>$row->name</h5>
+                        <p class='card-text'>
+                            $row->description
+                        </p>
+                        <a id='$row->showID' href='/pages/reserveren.php?v=$row->showID' class='reservation btn btn-primary mb-2'>Reserveren</a>
+                        <p class='card-text'><small class='text-muted'>Datum: $date $row->starttime</small></p>
+                        <p class='card-text'><small class='text-muted'>Locatie: $row->location</small></p>
+                    </div>
                 </div>
             </div>
             ";
