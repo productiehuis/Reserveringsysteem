@@ -5,9 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $showID = $_POST["id"];
 
-    $result = $performanceDL->deletePerformance($showID);
-
-    if ($result == "")
+    if ($performanceDL->deletePerformance($showID) == "")
     {
         echo 0;
     }

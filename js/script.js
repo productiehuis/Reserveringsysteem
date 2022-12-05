@@ -46,27 +46,69 @@ $(".delete").click(
 
 // Edit funtion
 $(".edit").click(
+function()
+{
+    let title = $(this).parent().prev().prev().prev().prev().prev().prev().text();
+    let description = $(this).parent().prev().prev().prev().prev().prev().text();
+    let starttime = $(this).parent().prev().prev().prev().prev().text();
+    let date = $(this).parent().prev().prev().prev().text();
+    let dateint = date.substring(6, 10) + '-' + date.substring(3, 5) + '-' + date.substring(0, 2)
+    let alocation = $(this).parent().prev().prev().text();
+    let seats = $(this).parent().prev().text();
 
-);
-
-function conformation() {
     Swal.fire({
-        title: 'Weet je het zeker?',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
+        title: "Pas de vertoning aan",
+        confirmButtonColor: '#47DD55',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Ja, ik weet het zeker!'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            Swal.fire(
-                'Verwijderd!',
-                'Input is verwijderd.',
-                'success'
-            )
-        }
+        showCancelButton: true,
+        html:
+            "<form class='form'>" +
+            "<input value='" + title + "' placeholder='Titel' type='text' id='titel'><br>" +
+            "<textarea placeholder='Beschrijving' id='beschrijving'>" + description + "</textarea><br>" +
+            "<input value='" + starttime + "' type='time' id='begintijd'>" +
+            "<input value='" + dateint + "' type='date' id='datum'><br>" +
+            "<input value='" + alocation + "' placeholder='Locatie' type='text' id='locatie'><br>" +
+            "<input value='" + seats + "' placeholder='Zitplaatsen' type='number' id='zitplaatsen'>" +
+            "</form>",
+    }).then(() =>
+    {
+        $.ajax({
+            url: "/control/editPerformance.php",
+            type: "POST",
+            data:
+                {
+                    id: this.id,
+                    title: $("#titel").val(),
+                    description: $("#beschrijving").val(),
+                    time: $("#begintijd").val(),
+                    date: $("#datum").val(),
+                    location: $("#locatie").val(),
+                    max: $("#zitplaatsen").val()
+                },
+            success: function (response) {
+                if (response == 0)
+                {
+                    Swal.fire({
+                        confirmButtonColor: '#3085d6',
+                        title: 'Vertoning is aangepast',
+                        confirmButtonText: 'Sluiten',
+                        icon: 'success',
+                        willClose: refresh,
+                    });
+                }
+                else
+                {
+                    Swal.fire(
+                        {
+                            title: 'Er is iets fout gegaan'
+                        }
+                    )
+                }
+            }
+        })
     })
 }
+);
 
 function refresh()
 {
