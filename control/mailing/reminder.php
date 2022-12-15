@@ -1,4 +1,6 @@
 <?php
+include 'send.php';
+
 function makeReminder(performance $performanceobj, string $visitorName, string $visitorEmail)
 {
     $message = '

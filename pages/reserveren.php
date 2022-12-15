@@ -59,7 +59,7 @@
                         echo "<p class='succes'>Reservering succesvol geplaatst, u ontvangt een bevestigingsmail.</p>";
                         break;
                     case "2":
-                        echo "<p class='error'>Er zijn niet genoeg plaatsen.</p>";
+                        echo "<p class='error'>Deze vertoning is volgeboekt.</p>";
                         break;
                     case "3":
                         echo "<p class='error'>E-mailadres is niet juist.</p>";

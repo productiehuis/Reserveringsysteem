@@ -1,47 +1,22 @@
 <?php
-require_once '../class/performanceDL.php';
+require_once "../class/performanceDL.php";
 require_once "../class/reservationDL.php";
-
+require_once "../mailing/reminder.php";
 $performance = new performanceDL();
 $reservation = new reservationDL();
-ini_set( 'display_errors', 1);
-ini_set('error_reporting', 1);
-ini_set('log_errors', 1);
 
 $date = new DateTimeImmutable();
 $checkDate = $date->add(new DateInterval('P1D'));
 
-$performanceobj = new performance(); //??????????????????????????????????????????
-
-
 foreach ($performance->readAllPerformanceOn($checkDate) as $item)
 {
+    $performanceobj = $performance->readPerformance($item->showID);
     $allReservations = $reservation->readReservedEmailReminder($item->showID);
-
-    echo '<pre>';
-    var_dump($allReservations);
-    echo '</pre>';
 
     for ($i = 0; $i < count($allReservations); $i++)
     {
-
-        echo $allReservations[$i]['visitorEmail'];
-
+        $message = makeReminder($performanceobj, $allReservations[$i]['visitorName'], $allReservations[$i]['visitorEmail']);
+        $subject = "Herinnering reservering";
+        sendMail($allReservations[$i]['visitorEmail'], $message, $subject);
     }
-
-    /*foreach ($allReservations as $reservation)
-    {
-
-
-        include 'reminder.php';
-        $message = makeReminder($item, $reservation["visitorName"], $reservation["visitorEmail"]);
-        if (sendMail($reservation["visitorEmail"], $message))
-        {
-            echo "SENT";
-        }
-        else
-        {
-            echo "NOT SENT";
-        }
-    }*/
 }
