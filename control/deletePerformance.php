@@ -1,16 +1,13 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+{
     require_once "class/performanceDL.php";
     $performanceDL = new performanceDL();
 
     $showID = $_POST["id"];
 
     if ($performanceDL->deletePerformance($showID) == "")
-    {
-        echo 0;
-    }
+        return true;
     else
-    {
-        echo 1;
-    }
+        return false;
 }

@@ -6,6 +6,8 @@ echo "<script src='https://code.jquery.com/jquery-3.6.1.min.js' integrity='sha25
 ini_set( 'display_errors', 1);
 ini_set('error_reporting', 1);
 ini_set('log_errors', 1);
+error_reporting(-1);
+set_error_handler("var_dump");
 
 
 require_once "class/accountDL.php";
@@ -18,16 +20,12 @@ $visitor = new visitorDL();
 $reservation = new reservationDL();
 
 
-$from = "emailtest@YOURDOMAIN";
-$to = "YOUREMAILADDRESS";
-$subject = "PHP Mail Test script";
-$message = "This is a test to check the PHP Mail functionality";
-$headers = "From: compagnie@kw1c.nl\r\n";
-$headers .= "MIME-Version: 1.0" . "\r\n";
-$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+$msg = "HELLO";
 
-echo mail($to,$subject,$message, $headers);
-
+// send email
+echo "<pre>";
+var_dump(mail("abuse@yourdomain.example", "My subject", $msg, ));
+echo "</pre>";
 
 //var_dump(mb_detect_encoding($desc, "ISO-8859-1"));
 

@@ -61,6 +61,9 @@
                     case "2":
                         echo "<p class='error'>Er zijn niet genoeg plaatsen.</p>";
                         break;
+                    case "3":
+                        echo "<p class='error'>E-mailadres is niet juist.</p>";
+                        break;
                     default:
                         echo "<p class='error'>Er is iets fout gegaan.</p>";
                         break;

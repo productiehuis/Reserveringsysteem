@@ -13,11 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $performanceobj->max = $_POST["max"];
 
     if ($performanceDL->updatePerformance($performanceobj) == "")
-    {
-        echo 0;
-    }
+        return true;
     else
-    {
-        echo 1;
-    }
+        return false;
 }

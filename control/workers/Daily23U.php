@@ -3,7 +3,6 @@ require_once '../class/performanceDL.php';
 require_once "../class/reservationDL.php";
 
 $performance = new performanceDL();
-$performanceobj = new performance();
 $reservation = new reservationDL();
 ini_set( 'display_errors', 1);
 ini_set('error_reporting', 1);
@@ -12,6 +11,7 @@ ini_set('log_errors', 1);
 $date = new DateTimeImmutable();
 $checkDate = $date->add(new DateInterval('P1D'));
 
+$performanceobj = new performance(); //??????????????????????????????????????????
 
 
 foreach ($performance->readAllPerformanceOn($checkDate) as $item)
@@ -26,6 +26,7 @@ foreach ($performance->readAllPerformanceOn($checkDate) as $item)
     {
 
         echo $allReservations[$i]['visitorEmail'];
+
     }
 
     /*foreach ($allReservations as $reservation)
