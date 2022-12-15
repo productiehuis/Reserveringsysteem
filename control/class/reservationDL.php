@@ -56,9 +56,28 @@ class reservationDL extends connection
 
         while ($row = $result->fetch_object())
         {
-            $reserved = array("Bezoeker naam" => $row->visitorName, "Bezoeker email" => $row->visitorEmail, "Aantal mensen" => $row->countPeople);
+            $reserved = array("Bezoekernaam" => $row->visitorName, "Bezoekeremail" => $row->visitorEmail, "Aantalmensen" => $row->countPeople);
 
             array_push($return, $reserved);
+        }
+
+        return $return;
+    }
+
+    public function readReservedEmailReminder(int $showID)
+    {
+        $cleanShowID = $this->sanitize($showID);
+
+        $stmt = $this->con->prepare("SELECT V.visitorEmail, V.visitorName FROM reservation R JOIN visitor V ON R.visitorID = V.visitorID WHERE showID = ?");
+        $stmt->bind_param("i", $cleanShowID);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        $return = [];
+
+        while ($row = $result->fetch_assoc())
+        {
+            $return[] = $row;
         }
 
         return $return;

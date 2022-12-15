@@ -18,8 +18,27 @@ $visitor = new visitorDL();
 $reservation = new reservationDL();
 
 
-echo "<td><button class='btn btn-warning edit' id='5'><i class='bi bi-pencil'></i></button></td>";
+$from = "emailtest@YOURDOMAIN";
+$to = "YOUREMAILADDRESS";
+$subject = "PHP Mail Test script";
+$message = "This is a test to check the PHP Mail functionality";
+$headers = "From: compagnie@kw1c.nl\r\n";
+$headers .= "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
+echo mail($to,$subject,$message, $headers);
+
+
+//var_dump(mb_detect_encoding($desc, "ISO-8859-1"));
+
+
+/*
+//NEXT DAY CHECK
+$date = new DateTimeImmutable();
+$newDate = $date->add(new DateInterval('P1D'));
+
+var_dump($performance->readAllPerformanceOn($newDate));
+*/
 
 
 /*

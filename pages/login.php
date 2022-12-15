@@ -16,6 +16,7 @@ if (isset($_SESSION["Username"]))
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/index-addon.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
     <script src="/js/bootstrap.bundle.js" defer></script>
     <script src="/js/header.js" defer></script>
     <title>KW1C Reserveringssysteem</title>

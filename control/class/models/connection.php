@@ -12,12 +12,6 @@ class connection
         {
             session_start();
         }
-
-        if (file_exists("connection_local.php"))
-        {
-            include "connection_local.php";
-            return;
-        }
     }
 
     protected function conn()

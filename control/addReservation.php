@@ -1,8 +1,9 @@
 <?php
+ini_set( 'display_errors', 1);
+ini_set('error_reporting', 1);
+ini_set('log_errors', 1);
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
-    require_once "class/visitorDL.php";
-    $visitorDL = new visitorDL();
     require_once "class/reservationDL.php";
     $reservationDL = new reservationDL();
     require_once "class/performanceDL.php";
@@ -19,6 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
     if (($countPeople + $reservedSeats) <= $maxSeats)
     {
+        require_once "class/visitorDL.php";
+        $visitorDL = new visitorDL();
+
         $visitorobj = new visitor();
         $visitorobj->visitorName = $visitorName;
         $visitorobj->visitorEmail = $visitorEmail;
@@ -32,6 +36,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         $reservationobj->countPeople = $countPeople;
 
         $result = $reservationDL->createReservation($reservationobj);
+
+        include "mailing/confirmation.php";
+        $mail = makeConfirmation($reservationobj, $showID, $visitorName, $visitorEmail);
+        $subject = 'Betreft: reserveringsbevestiging';
+        sendMail($visitorEmail, $mail, $subject);
 
         if ($result === "")
         {
