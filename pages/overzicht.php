@@ -6,7 +6,7 @@
         <div class="btn-group" role="group">
             <a type="button" class="btn btn-primary active"><i class="bi bi-calendar-check"></i> Overzicht</a>
             <a href="archief.php" type="button" class="btn btn-primary"><i class="bi bi-archive"></i> Archief</a>
-            <a href="vertoning.php" type="button" class="btn btn-success add"><i class="bi bi-plus-circle"></i> Toevoegen</a>
+            <a type="button" class="btn btn-success add"><i class="bi bi-plus-circle"></i> Toevoegen</a>
         </div>
         <input class="form-control mb-3 mt-3" id="searchTable" type="text" placeholder="Zoeken">
         <table class='table table-responsive-xxl overflow-scroll table-hover tableSearch'>

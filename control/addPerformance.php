@@ -12,7 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
     $performanceDL = new performanceDL();
     if ($performanceDL->createPerformance($performanceobj) === "")
-        header("Location: ../pages/vertoning.php?s=1");
+        return true;
     else
-        header("Location: ../pages/vertoning.php?s=0");
+        return false;
 }
+
+
