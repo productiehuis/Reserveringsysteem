@@ -9,11 +9,7 @@
                 <label for="inputVistor" class="col-sm-2 col-form-label"> Naam:</label>
                 <div class="col-sm-10">
                     <label>
-                        <input
-                                type="text"
-                                name="name"
-                                class="form-control"
-                                required>
+                        <input type="text" name="name" class="form-control" required>
                     </label>
                 </div>
             </div>
@@ -21,11 +17,7 @@
                 <label for="inputEmail" class="col-sm-2 col-form-label"> Email:</label>
                 <div class="col-sm-10">
                     <label>
-                        <input
-                                type="text"
-                                class="form-control"
-                                name="email"
-                                required>
+                        <input type="text" class="form-control" name="email" required>
                     </label>
                 </div>
             </div>
@@ -33,11 +25,23 @@
                 <label for="inputAmount" class="col-sm-2 col-form-label"> Aantal bezoekers:</label>
                 <div class="col-sm-10">
                     <label>
-                        <input
-                                type="number"
-                                class="form-control"
-                                name="amount"
-                                required>
+                        <input type="number" class="form-control" name="amount" required>
+                    </label>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputAmount" class="col-sm-2 col-form-label"> Afdeling:</label>
+                <div class="col-sm-10">
+                    <label>
+                        <input type="text" class="form-control" name="sector" required>
+                    </label>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputAmount" class="col-sm-2 col-form-label"> Hoe weet je van deze voorstelling:</label>
+                <div class="col-sm-10">
+                    <label>
+                        <input type="text" class="form-control" name="referral" required>
                     </label>
                 </div>
             </div>

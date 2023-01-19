@@ -1,44 +1,44 @@
 <?php include "../includes/header.php"; ?>
-<main>
-    <h2 class="page-header">
-        Archief
-    </h2>
-    <div class="btn-group" role="group">
-        <a href="overzicht.php" type="button" class="btn btn-primary"><i class="bi bi-calendar-check"></i> Overzicht</a>
-        <a type="button" class="btn btn-primary active"><i class="bi bi-archive"></i> Archief</a>
-        <a type="button" class="btn btn-success add"><i class="bi bi-plus-circle"></i> Toevoegen</a>
-    </div>
-    <input class="form-control mb-3 mt-3" id="searchTable" type="text" placeholder="Zoeken">
-    <table class='table table-responsive-xxl table-hover overflow-scroll'>
-        <thead>
-            <tr class="m-3 rounded">
-                <th>ID</th>
-                <th>Naam</th>
-                <th>Omschrijving</th>
-                <th>Begintijd</th>
-                <th>Datum</th>
-                <th>Locatie</th>
-                <th>Zitplaatsen</th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
+    <main>
+        <h2 class="page-header">
+            Archief
+        </h2>
+        <div class="btn-group" role="group">
+            <a href="overzicht.php" type="button" class="btn btn-primary"><i class="bi bi-calendar-check"></i> Overzicht</a>
+            <a type="button" class="btn btn-primary active"><i class="bi bi-archive"></i> Archief</a>
+            <a type="button" class="btn btn-success add"><i class="bi bi-plus-circle"></i> Toevoegen</a>
+        </div>
+        <input class="form-control mb-3 mt-3" id="searchTable" type="text" placeholder="Zoeken">
+        <table class='table table-responsive-xxl overflow-scroll table-hover overflow-scroll'>
+            <thead>
+                <tr class="m-3 rounded">
+                    <th>ID</th>
+                    <th>Naam</th>
+                    <th>Omschrijving</th>
+                    <th>Begintijd</th>
+                    <th>Datum</th>
+                    <th>Locatie</th>
+                    <th>Zitplaatsen</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
             </thead>
-        <tbody>
-        <?php
-        require_once "../control/class/performanceDL.php";
-        $performance = new performanceDL();
+            <tbody>
+            <?php
+            require_once "../control/class/performanceDL.php";
+            $performance = new performanceDL();
 
-        $allperformances = $performance->readAllPerformance();
+            $allperformances = $performance->readAllPerformance();
 
-        foreach ($allperformances as $row)
-        {
-            $currentDate = new DateTimeImmutable();
-            $date = $row->date->format('d-m-Y');
-
-            if ($row->date < $currentDate)
+            foreach ($allperformances as $row)
             {
-                echo "
+                $currentDate = new DateTimeImmutable();
+                $date = $row->date->format('d-m-Y');
+
+                if ($row->date < $currentDate)
+                {
+                    echo "
                     <tr class='table-light'>
                         <td class='text-center'><p>$row->showID</p></td>
                         <td class='text-center'><p>$row->name</p></td>
@@ -52,10 +52,10 @@
                         <td><a href='/control/exportExcel.php?id=$row->showID' class='btn btn-success export'><i class='bi bi-file-earmark-spreadsheet'></i></a></td>
                     </tr>
                     ";
+                }
             }
-        }
-        ?>
-        </tbody>
-    </table>
-</main>
+            ?>
+            </tbody>
+        </table>
+    </main>
 <?php include "../includes/footer.php"; ?>

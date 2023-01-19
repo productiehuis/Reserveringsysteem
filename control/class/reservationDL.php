@@ -16,9 +16,11 @@ class reservationDL extends connection
         $cleanVisitorID = $this->sanitize($data->visitorID);
         $cleanShowID = $this->sanitize($data->showID);
         $cleanCountPeople = $this->sanitize($data->countPeople);
+        $cleanSector = $this->sanitize($data->sector);
+        $cleanReferral = $this->sanitize($data->referral);
 
-        $stmt = $this->con->prepare("INSERT INTO reservation(visitorID, showID, countPeople) VALUES(?, ?, ?)");
-        $stmt->bind_param("iii", $cleanVisitorID, $cleanShowID, $cleanCountPeople);
+        $stmt = $this->con->prepare("INSERT INTO reservation(visitorID, showID, countPeople, sector, referral) VALUES(?, ?, ?, ?, ?)");
+        $stmt->bind_param("iiiss", $cleanVisitorID, $cleanShowID, $cleanCountPeople, $cleanSector, $cleanReferral);
         $stmt->execute();
         return $stmt->error;
     }
@@ -56,7 +58,7 @@ class reservationDL extends connection
 
         while ($row = $result->fetch_object())
         {
-            $reserved = array("Bezoekernaam" => $row->visitorName, "Bezoekeremail" => $row->visitorEmail, "Aantalmensen" => $row->countPeople);
+            $reserved = array("Bezoekernaam" => $row->visitorName, "Bezoekeremail" => $row->visitorEmail, "Aantalmensen" => $row->countPeople, "Afdeling" => $row->sector, "Verwijzing" => $row->referral);
 
             array_push($return, $reserved);
         }

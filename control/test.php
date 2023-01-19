@@ -20,12 +20,13 @@ $visitor = new visitorDL();
 $reservation = new reservationDL();
 
 
-$msg = "HELLO";
+
+/*$msg = "HELLO";
 
 // send email
 echo "<pre>";
 var_dump(mail("abuse@yourdomain.example", "My subject", $msg, ));
-echo "</pre>";
+echo "</pre>";*/
 
 //var_dump(mb_detect_encoding($desc, "ISO-8859-1"));
 
@@ -131,4 +132,17 @@ echo "<PRE>";
 print_r($reservation->readReserved(5));
 
 echo "</PRE>";
+*/
+
+/*
+//CREATE RESERVATION
+$reservationobj = new reservation();
+
+$reservationobj->showID = 1;
+$reservationobj->visitorID = 29;
+$reservationobj->countPeople = 1;
+$reservationobj->sector = "ICT";
+$reservationobj->referral = "MOND OP MOND";
+
+var_dump($reservation->createReservation($reservationobj));
 */

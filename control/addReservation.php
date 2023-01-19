@@ -6,12 +6,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
     //CHECK IF EMAILADDRESS IS VALID.
     if (!filter_var($visitorEmail, FILTER_VALIDATE_EMAIL)) {
-        header("Location: ../pages/reserveren.php?v=$showID&s=3");
-        return false;
+        echo "IT DONT WORK";
     }
 
     $visitorName = $_POST["name"];
     $countPeople = $_POST["amount"];
+    $sector = $_POST["sector"];
+    $referral = $_POST["referral"];
 
     require_once "class/performanceDL.php";
     require_once "class/reservationDL.php";
@@ -25,27 +26,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $reservedSeats = $reservationDL->checkReserved($showID);
     if (($countPeople + $reservedSeats) > $maxSeats)
     {
-        header("Location: ../pages/reserveren.php?v=$showID&s=2");
         return false;
     }
 
     //ADD VISITOR TO DATABASE.
     $visitorobj = new visitor();
-    $visitorobj->visitorID = $visitorDL->createVisitor($visitorobj);
     $visitorobj->visitorName = $visitorName;
     $visitorobj->visitorEmail = $visitorEmail;
 
+    $visitorobj->visitorID = $visitorDL->createVisitor($visitorobj);
+
     //ADD RESERVATION TO DATABASE.
     $reservationobj = new reservation();
-    $reservationobj->visitorID = $visitorobj->visitorID;
     $reservationobj->showID = $showID;
+    $reservationobj->visitorID = $visitorobj->visitorID;
     $reservationobj->countPeople = $countPeople;
-
-    if ($reservationDL->createReservation($reservationobj) === "")
-    {
-        header("Location: ../pages/reserveren.php?v=$showID&s=1");
-        return false;
-    }
+    $reservationobj->sector = $sector;
+    $reservationobj->referral = $referral;
 
     //SEND CONFIRMATION EMAIL.
     include "mailing/confirmation.php";
@@ -54,10 +51,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     sendMail($visitorEmail, $mail, $subject);
 
     //EVERYTHING CHECKED AND CORRECT.
-    header("Location: ../pages/reserveren.php?v=$showID&s=0");
-    return true;
-}
-else
-{
-    header("Location: ../index.php");
+    if ($reservationDL->createReservation($reservationobj) === "")
+    {
+        return true;
+    }
 }
