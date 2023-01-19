@@ -62,6 +62,8 @@ $(".edit").click
             title: "Pas de vertoning aan",
             confirmButtonColor: '#47DD55',
             cancelButtonColor: '#d33',
+            confirmButtonText: 'Ja',
+            cancelButtonText: 'Annuleren',
             showCancelButton: true,
             html:
                 "<form class='form'>" +
@@ -123,6 +125,8 @@ $(".add").click
             title: "Maak een voorstelling aan",
             confirmButtonColor: '#47DD55',
             cancelButtonColor: '#d33',
+            confirmButtonText: 'Ja',
+            cancelButtonText: 'Annuleren',
             showCancelButton: true,
             html:
                 "<form class='form'>" +
@@ -184,6 +188,8 @@ $(".reservation").click
             title: "Reserveren",
             confirmButtonColor: '#47DD55',
             cancelButtonColor: '#d33',
+            confirmButtonText: 'Ja',
+            cancelButtonText: 'Annuleren',
             showCancelButton: true,
             html:
                 "<form class='form'>" +
