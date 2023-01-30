@@ -22,24 +22,24 @@ echo "<td><button class='btn btn-warning edit' id='5'><i class='bi bi-pencil'></
 
 
 
-/*
+
 //CREATE ACCOUNT
 
 $accountobj = new account();
 
-$accountobj->userName = "admin";
+$accountobj->userName = "kaine";
 $accountobj->userPassword = "password";
 $accountobj->userLevel = 1;
 
 echo $account->createAccount($accountobj);
-*/
 
 
-/*
+
+
 //READ ACCOUNT
 
 var_dump($account->readAccount("admin"));
-*/
+
 
 
 /*

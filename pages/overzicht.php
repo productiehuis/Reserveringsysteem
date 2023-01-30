@@ -9,7 +9,7 @@
             <a href="vertoning.php" type="button" class="btn btn-success add"><i class="bi bi-plus-circle"></i> Toevoegen</a>
         </div>
         <input class="form-control mb-3 mt-3" id="searchTable" type="text" placeholder="Zoeken">
-        <table class='table table-responsive-xxl overflow-scroll table-hover tableSearch'>
+        <table class='sortable table table-responsive-xxl overflow-scroll table-hover tableSearch'>
             <thead>
                 <tr class="m-3 rounded">
                     <th>ID</th>

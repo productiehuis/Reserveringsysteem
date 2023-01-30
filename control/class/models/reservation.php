@@ -6,4 +6,6 @@ class reservation
     public int $visitorID;
     public int $showID;
     public int $countPeople;
+    public string $department;
+    public string $feedback;
 }

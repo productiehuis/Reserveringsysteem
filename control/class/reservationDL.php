@@ -56,7 +56,7 @@ class reservationDL extends connection
 
         while ($row = $result->fetch_object())
         {
-            $reserved = array("Bezoeker naam" => $row->visitorName, "Bezoeker email" => $row->visitorEmail, "Aantal mensen" => $row->countPeople);
+            $reserved = array("Bezoeker naam" => $row->visitorName, "Bezoeker email" => $row->visitorEmail, "Aantal mensen" => $row->countPeople, "Afdeling" => $row->department, "Feedback" => $row->feedback);
 
             array_push($return, $reserved);
         }

@@ -10,24 +10,18 @@
             <div class="row mb-3">
                 <label for="inputName" class="col-sm-2 col-form-label"> Naam</label>
                 <div class="col-sm-10">
-                    <input type="text" name="title" class="form-control" id="inputName" placeholder="Titel vertoning" required>
+                    <input type="text" name="title" class="form-control" id="inputName" placeholder="Naam event" required>
                 </div>
             </div>
             <div class="row mb-3">
                 <label for="inputDescription" class="col-sm-2 col-form-label"> Omschrijving</label>
                 <div class="col-sm-10">
-                    <input type="text" name="description" class="form-control" id="inputDescription" placeholder="Extra informatie" required>
+                    <input type="text" name="description" class="form-control" id="inputDescription" placeholder="Informatie over event" required>
                 </div>
             </div>
             <fieldset class="row mb-3">
                 <legend class="col-form-label col-sm-2 pt-0"> Locatie</legend>
                 <div class="col-sm-10">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="location" id="gridRadios1" value="option1">
-                        <label class="form-check-label" for="gridRadios1">
-                            Koningszaal
-                        </label>
-                    </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" id="other" name="location" value="other" />
                         <label class="form-check-label" for="other">Ruimte</label>
@@ -36,10 +30,10 @@
                 </div>
             </fieldset>
             <div class="row mb-3">
-                <label for="form-size" class="col-sm-2 col-form-label"> Hoeveelheid</label>
+                <label for="form-size" class="col-sm-2 col-form-label"> Capaciteit</label>
                 <div class="col-sm-10">
                     <label>
-                        <input class="form-control" type="number" placeholder="Capaciteit" id="form-size" name="max"/>
+                        <input class="form-control" type="number" placeholder="0" id="form-size" name="max"/>
                     </label>
                 </div>
             </div>
