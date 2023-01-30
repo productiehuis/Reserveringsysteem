@@ -3,7 +3,7 @@
 class account
 {
     public ?int $userID;
-    public string $userName;
-    public string $userPassword;
-    public int $userLevel;
+    public ?string $userName;
+    public ?string $userPassword;
+    public ?int $userLevel;
 }

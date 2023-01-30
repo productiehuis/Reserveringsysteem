@@ -9,6 +9,7 @@ session_start();
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link href="/css/bootstrap.css" rel="stylesheet">
         <link href="/css/index-addon.css" rel="stylesheet">
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
         <title>KW1C Reserveringssysteem</title>
     </head>
     <body>
@@ -31,7 +32,7 @@ session_start();
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
                     <li class="nav-item">
-                      <a class="nav-link active m-3 border border-light rounded bg-white hover-button" aria-current="page" href="index.php">Agenda</a>
+                      <a class="nav-link active m-3 border border-light rounded bg-white hover-button" aria-current="page" href="/index.php">Agenda</a>
                     </li>
                   </ul>
                     <?php

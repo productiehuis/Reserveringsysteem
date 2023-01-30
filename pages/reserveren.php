@@ -3,17 +3,13 @@
     <h2 class="page-header">
         Reserveren
     </h2>
-    <div class="center">
+    <div class="col-sm-6 col-sm-offset-3 center">
         <form method="POST" action="/control/addReservation.php">
             <div class="row mb-3">
-                <label for="inputVistor" class="col-sm-2 col-form-label"> Voor & achternaam:</label>
+                <label for="inputVistor" class="col-sm-2 col-form-label"> Naam:</label>
                 <div class="col-sm-10">
                     <label>
-                        <input
-                                type="text"
-                                name="name"
-                                class="form-control"
-                                required>
+                        <input type="text" name="name" class="form-control" required>
                     </label>
                 </div>
             </div>
@@ -21,51 +17,31 @@
                 <label for="inputEmail" class="col-sm-2 col-form-label"> Email:</label>
                 <div class="col-sm-10">
                     <label>
-                        <input
-                                type="text"
-                                class="form-control"
-                                placeholder="email@kw1c.nl"
-                                name="email"
-                                required>
+                        <input type="text" class="form-control" name="email" required>
                     </label>
                 </div>
             </div>
             <div class="row mb-3">
-                <label for="inputAmount" class="col-sm-2 col-form-label"> Aantal gasten:</label>
+                <label for="inputAmount" class="col-sm-2 col-form-label"> Aantal bezoekers:</label>
                 <div class="col-sm-10">
                     <label>
-                        <input
-                                type="number"
-                                placeholder="0"
-                                class="form-control"
-                                name="amount"
-                                required>
+                        <input type="number" class="form-control" name="amount" required>
                     </label>
                 </div>
             </div>
             <div class="row mb-3">
-                <label for="inputDepartment" class="col-sm-2 col-form-label"> Afdeling:</label>
+                <label for="inputAmount" class="col-sm-2 col-form-label"> Afdeling:</label>
                 <div class="col-sm-10">
                     <label>
-                        <input
-                                type="text"
-                                class="form-control"
-                                placeholder="ICT and Creative Industries"
-                                name="textbox"
-                                required>
+                        <input type="text" class="form-control" name="sector" required>
                     </label>
                 </div>
             </div>
             <div class="row mb-3">
-                <label for="inputFeedback" class="col-sm-2 col-form-label"> Hoe ben je te weten gekomen over dit evenement / voorstelling:</label>
+                <label for="inputAmount" class="col-sm-2 col-form-label"> Hoe weet je van deze voorstelling:</label>
                 <div class="col-sm-10">
                     <label>
-                        <select name="feedbackList" required>
-                            <option value="">Via het portaal / startpunt</option>
-                            <option value="">Via promotie op beeldschermen</option>
-                            <option class="form-check-label" for="other" value="">Anders</option>
-                            <label for="otherValue"></label><input type="text" id="otherValue" name="feedbackOther"/>
-                        </select>
+                        <input type="text" class="form-control" name="referral" required>
                     </label>
                 </div>
             </div>
@@ -84,13 +60,13 @@
                 switch ($_GET["s"])
                 {
                     case "1":
-                        echo "<div class='alert alert-success'>
-                                  <strong>Success!</strong> Reservering succesvol geplaatst, u ontvangt een bevestigingsmail. U word doorgestuurd.
-                                </div>";
-                        echo '<script>setTimeout(() => {window.location="../index.php"}, 4000);</script>';
+                        echo "<p class='succes'>Reservering succesvol geplaatst, u ontvangt een bevestigingsmail.</p>";
                         break;
                     case "2":
-                        echo "<p class='error'>Er zijn niet genoeg plaatsen.</p>";
+                        echo "<p class='error'>Deze vertoning is volgeboekt.</p>";
+                        break;
+                    case "3":
+                        echo "<p class='error'>E-mailadres is niet juist.</p>";
                         break;
                     default:
                         echo "<p class='error'>Er is iets fout gegaan.</p>";

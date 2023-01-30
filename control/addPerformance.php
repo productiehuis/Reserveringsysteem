@@ -2,8 +2,6 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
     require_once "class/performanceDL.php";
-    $performanceDL = new performanceDL();
-
     $performanceobj = new performance();
     $performanceobj->name = $_POST["title"];
     $performanceobj->description = $_POST["description"];
@@ -12,8 +10,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $performanceobj->date = new DateTimeImmutable($_POST["date"]);
     $performanceobj->max = $_POST["max"];
 
+    $performanceDL = new performanceDL();
     if ($performanceDL->createPerformance($performanceobj) === "")
-        header("Location: ../pages/vertoning.php?s=1");
+        return true;
     else
-        header("Location: ../pages/vertoning.php?s=0");
+        return false;
 }
+
+

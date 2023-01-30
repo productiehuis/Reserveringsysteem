@@ -1,13 +1,13 @@
 <?php
 if (array_key_exists('id', $_GET))
 {
-    $showid = $_GET['id'];
     require_once "class/reservationDL.php";
     $reservation = new reservationDL();
 
+    $showid = $_GET['id'];
+
     $allReservations = $reservation->readReserved($showid);
 
-    // Filter Customer Data
     function filterCustomerData(&$str)
     {
         $str = preg_replace("/\t/", "\\t", $str);
@@ -20,15 +20,14 @@ if (array_key_exists('id', $_GET))
     header("Content-Disposition: attachment; filename=$fileName");
     header("Content-Type: application/vnd.ms-excel");
 
-    //To define column name in first row.
     $column_names = false;
-    // run loop through each row in $customers_data
-    foreach ($allReservations as $row) {
-        if (!$column_names) {
+    foreach ($allReservations as $row)
+    {
+        if (!$column_names)
+        {
             echo implode("\t", array_keys($row)) . "\n";
             $column_names = true;
         }
-        // The array_walk() function runs each array element in a user-defined function.
         array_walk($row, 'filterCustomerData');
         echo implode("\t", array_values($row)) . "\n";
     }

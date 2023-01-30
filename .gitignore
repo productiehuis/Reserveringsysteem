@@ -2,4 +2,3 @@
 bootstrap/
 .idea/inspectionProfiles/Project_Default.xml
 /node_modules/
-control/class/models/connection_local.php

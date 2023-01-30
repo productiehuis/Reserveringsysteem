@@ -6,6 +6,8 @@ echo "<script src='https://code.jquery.com/jquery-3.6.1.min.js' integrity='sha25
 ini_set( 'display_errors', 1);
 ini_set('error_reporting', 1);
 ini_set('log_errors', 1);
+error_reporting(-1);
+set_error_handler("var_dump");
 
 
 require_once "class/accountDL.php";
@@ -18,8 +20,24 @@ $visitor = new visitorDL();
 $reservation = new reservationDL();
 
 
-echo "<td><button class='btn btn-warning edit' id='5'><i class='bi bi-pencil'></i></button></td>";
 
+/*$msg = "HELLO";
+
+// send email
+echo "<pre>";
+var_dump(mail("abuse@yourdomain.example", "My subject", $msg, ));
+echo "</pre>";*/
+
+//var_dump(mb_detect_encoding($desc, "ISO-8859-1"));
+
+
+/*
+//NEXT DAY CHECK
+$date = new DateTimeImmutable();
+$newDate = $date->add(new DateInterval('P1D'));
+
+var_dump($performance->readAllPerformanceOn($newDate));
+*/
 
 
 
@@ -114,4 +132,17 @@ echo "<PRE>";
 print_r($reservation->readReserved(5));
 
 echo "</PRE>";
+*/
+
+/*
+//CREATE RESERVATION
+$reservationobj = new reservation();
+
+$reservationobj->showID = 1;
+$reservationobj->visitorID = 29;
+$reservationobj->countPeople = 1;
+$reservationobj->sector = "ICT";
+$reservationobj->referral = "MOND OP MOND";
+
+var_dump($reservation->createReservation($reservationobj));
 */

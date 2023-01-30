@@ -70,7 +70,36 @@ class performanceDL extends connection
 
             $performanceobj->showID = $row->showID;
             $performanceobj->name = $row->showName;
-            $performanceobj->description = $row->description;
+            $performanceobj->description = mb_convert_encoding($row->description, "UTF-8", "ISO-8859-1");
+            $performanceobj->starttime = $row->startTime;
+            $performanceobj->date = new DateTimeImmutable($row->date);
+            $performanceobj->location = $row->location;
+            $performanceobj->max = $row->Max_seats;
+            $performanceobj->past = $row->Past;
+
+            $return[] = $performanceobj;
+        }
+
+        return $return;
+    }
+
+    public function readAllPerformanceOn(DateTimeImmutable $date)
+    {
+        $stmt = $this->con->prepare("SELECT * FROM performance WHERE date = ?");
+        $stmt->bind_param("s", $date->format('Y-m-d'));
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+
+        $return = [];
+
+        while ($row = $result->fetch_object())
+        {
+            $performanceobj = new performance();
+
+            $performanceobj->showID = $row->showID;
+            $performanceobj->name = $row->showName;
+            $performanceobj->description = mb_convert_encoding($row->description, "UTF-8", "ISO-8859-1");
             $performanceobj->starttime = $row->startTime;
             $performanceobj->date = new DateTimeImmutable($row->date);
             $performanceobj->location = $row->location;

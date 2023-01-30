@@ -6,7 +6,7 @@
         <div class="btn-group" role="group">
             <a type="button" class="btn btn-primary active"><i class="bi bi-calendar-check"></i> Overzicht</a>
             <a href="archief.php" type="button" class="btn btn-primary"><i class="bi bi-archive"></i> Archief</a>
-            <a href="vertoning.php" type="button" class="btn btn-success add"><i class="bi bi-plus-circle"></i> Toevoegen</a>
+            <a type="button" class="btn btn-success add"><i class="bi bi-plus-circle"></i> Toevoegen</a>
         </div>
         <input class="form-control mb-3 mt-3" id="searchTable" type="text" placeholder="Zoeken">
         <table class='sortable table table-responsive-xxl overflow-scroll table-hover tableSearch'>
@@ -40,13 +40,13 @@
                 {
                     echo "
                     <tr class='table-light'>
-                        <td class='text-center id'><p>$row->showID</p></td>
-                        <td class='text-center name'><p>$row->name</p></td>
-                        <td class='text-center description'><p>$row->description</p></td>
-                        <td class='text-center starttime'><p>$row->starttime</p></td>
-                        <td class='text-center date'><p>$date</p></td>
-                        <td class='text-center location'><p>$row->location</p></td>
-                        <td class='text-center max'><p>$row->max</p></td>
+                        <td class='text-center'><p>$row->showID</p></td>
+                        <td class='text-center'><p>$row->name</p></td>
+                        <td class='text-center'><p>$row->description</p></td>
+                        <td class='text-center'><p>$row->starttime</p></td>
+                        <td class='text-center'><p>$date</p></td>
+                        <td class='text-center'><p>$row->location</p></td>
+                        <td class='text-center'><p>$row->max</p></td>
                         <td><button class='btn btn-warning edit' id='$row->showID'><i class='bi bi-pencil'></i></button></td>
                         <td><button class='btn btn-danger delete' id='$row->showID'><i class=\"bi bi-trash\"></i></button></td>
                         <td><a href='/control/exportExcel.php?id=$row->showID' class='btn btn-success export'><i class='bi bi-file-earmark-spreadsheet'></i></a></td>

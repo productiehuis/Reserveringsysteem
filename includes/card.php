@@ -24,7 +24,7 @@ foreach ($allperformances as $row)
                         <p class='card-text'>
                             $row->description
                         </p>
-                        <a id='$row->showID' href='/pages/reserveren.php?v=$row->showID' class='reservation btn btn-primary mb-2'>Reserveren</a>
+                        <a id='$row->showID' class='reservation btn btn-primary mb-2'>Reserveren</a>
                         <p class='card-text'><small class='text-muted'>Datum: $date $row->starttime</small></p>
                         <p class='card-text'><small class='text-muted'>Locatie: $row->location</small></p>
                     </div>
@@ -40,3 +40,4 @@ foreach ($allperformances as $row)
     }
 }
 echo "</div>";
+//href='/pages/reserveren.php?v=$row->showID'
